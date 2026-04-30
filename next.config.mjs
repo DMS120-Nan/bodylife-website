@@ -14,18 +14,6 @@ const nextConfig = {
         pathname: "/**"
       }
     ]
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/cart/:path*",
-        destination: "https://0idbp3-r4.myshopify.com/cart/:path*"
-      },
-      {
-        source: "/checkouts/:path*",
-        destination: "https://0idbp3-r4.myshopify.com/checkouts/:path*"
-      }
-    ];
   }
 };
 
