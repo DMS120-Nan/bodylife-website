@@ -629,6 +629,54 @@ a {
   object-fit: contain;
 }
 
+.result-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.result-comparison-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-comparison-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+.result-comparison-label--after {
+  color: var(--green);
+}
+
+.result-comparison-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.result-comparison-img .result-photo {
+  object-fit: cover;
+}
+
+.result-comparison-caption {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+}
+
 .brand-signature-section {
   background: var(--surface);
   border-top: 1px solid var(--line);

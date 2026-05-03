@@ -115,14 +115,33 @@ export function HomePage({ region }) {
             Shop daily care
           </Link>
         </div>
-        <div className="result-comparison-image" aria-label="Skincare result comparison image">
-          <Image
-            alt="Consistent skincare use comparison"
-            className="result-photo"
-            fill
-            sizes="(max-width: 700px) 100vw, 42vw"
-            src="/images/results-comparison.png"
-          />
+        <div className="result-comparison">
+          <div className="result-comparison-card">
+            <div className="result-comparison-label">Before</div>
+            <div className="result-comparison-img">
+              <Image
+                alt="Skin before consistent skincare routine"
+                src="/images/results-before.png"
+                fill
+                sizes="(max-width: 700px) 45vw, 20vw"
+                className="result-photo"
+              />
+            </div>
+            <p className="result-comparison-caption">Day 1</p>
+          </div>
+          <div className="result-comparison-card">
+            <div className="result-comparison-label result-comparison-label--after">After</div>
+            <div className="result-comparison-img">
+              <Image
+                alt="Skin after 4 weeks of consistent skincare routine"
+                src="/images/results-after.png"
+                fill
+                sizes="(max-width: 700px) 45vw, 20vw"
+                className="result-photo"
+              />
+            </div>
+            <p className="result-comparison-caption">Week 4</p>
+          </div>
         </div>
       </section>
 
