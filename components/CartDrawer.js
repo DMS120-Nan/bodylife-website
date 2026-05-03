@@ -57,8 +57,8 @@ export function CartDrawer({ region, shopifyReady }) {
       let checkoutUrl = data.checkoutUrl;
       try {
         const parsed = new URL(checkoutUrl);
-        if (parsed.hostname !== "0idbp3-r4.myshopify.com") {
-          parsed.hostname = "0idbp3-r4.myshopify.com";
+        if (parsed.hostname === "www.bodylifeofficial.com") {
+          parsed.hostname = "bodylifeofficial.com";
           checkoutUrl = parsed.toString();
         }
       } catch {

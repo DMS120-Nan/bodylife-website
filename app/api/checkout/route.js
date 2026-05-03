@@ -32,7 +32,7 @@ export async function POST(request) {
     let finalUrl = checkout.checkoutUrl;
     finalUrl = finalUrl.replace(
       /https?:\/\/[^/]+/,
-      "https://0idbp3-r4.myshopify.com"
+      "https://bodylifeofficial.com"
     );
 
     return NextResponse.json({ checkoutUrl: finalUrl });
