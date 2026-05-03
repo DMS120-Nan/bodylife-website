@@ -54,7 +54,17 @@ export function CartDrawer({ region, shopifyReady }) {
         throw new Error(data.error || "Unable to create checkout.");
       }
 
-      window.location.href = data.checkoutUrl;
+      let checkoutUrl = data.checkoutUrl;
+      try {
+        const parsed = new URL(checkoutUrl);
+        if (parsed.hostname !== "0idbp3-r4.myshopify.com") {
+          parsed.hostname = "0idbp3-r4.myshopify.com";
+          checkoutUrl = parsed.toString();
+        }
+      } catch {
+        // use original URL
+      }
+      window.location.href = checkoutUrl;
     } catch (error) {
       setCheckoutError(error.message || "Unable to create checkout.");
       setIsCheckingOut(false);
