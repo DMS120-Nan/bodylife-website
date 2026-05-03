@@ -27,15 +27,7 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
-    // Force checkout URL to use myshopify.com domain
-    let finalUrl = checkout.checkoutUrl;
-    finalUrl = finalUrl.replace(
-      /https?:\/\/[^/]+/,
-      "https://checkout.bodylifeofficial.com"
-    );
-
-    return NextResponse.json({ checkoutUrl: finalUrl });
+    return NextResponse.json({ checkoutUrl: checkout.checkoutUrl });
   } catch (error) {
     return NextResponse.json(
       { error: error.message || "Unable to create checkout." },

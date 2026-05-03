@@ -54,17 +54,11 @@ export function CartDrawer({ region, shopifyReady }) {
         throw new Error(data.error || "Unable to create checkout.");
       }
 
-      let checkoutUrl = data.checkoutUrl;
-      try {
-        const parsed = new URL(checkoutUrl);
-        if (parsed.hostname !== "checkout.bodylifeofficial.com") {
-          parsed.hostname = "checkout.bodylifeofficial.com";
-          checkoutUrl = parsed.toString();
-        }
-      } catch {
-        // use original URL
+      const checkoutUrl = data.checkoutUrl;
+      const shopifyWindow = window.open(checkoutUrl, "_self");
+      if (!shopifyWindow) {
+        window.location.assign(checkoutUrl);
       }
-      window.location.href = checkoutUrl;
     } catch (error) {
       setCheckoutError(error.message || "Unable to create checkout.");
       setIsCheckingOut(false);
