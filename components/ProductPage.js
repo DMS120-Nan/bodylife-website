@@ -18,6 +18,7 @@ export function ProductPage({ product, region }) {
   const featuredImage = product.images?.[0];
   const variants = product.sizes?.length ? product.sizes : ["Default"];
   const [selectedVariant, setSelectedVariant] = useState(variants[0]);
+  const [quantity, setQuantity] = useState(1);
   const selectedPrice = formatPrice(product, region, selectedVariant);
 
   return (
@@ -73,10 +74,30 @@ export function ProductPage({ product, region }) {
               ))}
             </div>
           </div>
+          <div className="option-row">
+            <span>Quantity</span>
+            <div className="quantity-control">
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                disabled={quantity <= 1}
+              >
+                -
+              </button>
+              <span>{quantity}</span>
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => q + 1)}
+              >
+                +
+              </button>
+            </div>
+          </div>
           <AddToCartButton
             product={product}
             region={region}
             variant={selectedVariant}
+            quantity={quantity}
           />
           <p className="product-cta-reassurance">
             Gentle enough for daily use. Lightweight, no heavy residue.
@@ -122,6 +143,7 @@ export function ProductPage({ product, region }) {
           product={product}
           region={region}
           variant={selectedVariant}
+          quantity={quantity}
         />
       </div>
     </>
