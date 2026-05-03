@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BrandSignatureSection } from "./BrandSignatureSection";
+import { CertificationBadges } from "./CertificationBadges";
 import { ClinicalCredibilitySection } from "./ClinicalCredibilitySection";
 import { ClinicalProofSection } from "./ClinicalProofSection";
 import { HomeTrustSection } from "./HomeTrustSection";
@@ -58,6 +59,8 @@ export function HomePage({ region }) {
       <TextureSection />
 
       <ClinicalProofSection />
+
+      <CertificationBadges />
 
       <section className="section benefit-section">
         <div className="section-heading">

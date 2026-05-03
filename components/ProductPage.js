@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { formatPrice } from "../lib/regions";
 import { AddToCartButton } from "./AddToCartButton";
+import { CertificationBadges } from "./CertificationBadges";
 import { ClinicalCredibilitySection } from "./ClinicalCredibilitySection";
 import { ClinicalProofSection } from "./ClinicalProofSection";
 import { HomeTrustSection } from "./HomeTrustSection";
@@ -103,6 +104,7 @@ export function ProductPage({ product, region }) {
             Gentle enough for daily use. Lightweight, no heavy residue.
           </p>
           <TrustBadges />
+          <CertificationBadges />
         </div>
       </section>
 

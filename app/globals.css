@@ -2073,3 +2073,74 @@ a {
     padding-top: 52px;
   }
 }
+
+.certification-badges-section {
+  padding: 40px 20px;
+}
+
+.certification-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.certification-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100px;
+}
+
+.certification-badge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: var(--accent);
+  transition: border-color 0.2s;
+}
+
+.certification-badge-icon:hover {
+  border-color: var(--accent);
+}
+
+.certification-badge-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.certification-badge-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+@media (max-width: 600px) {
+  .certification-badges {
+    gap: 20px;
+  }
+  .certification-badge {
+    width: 80px;
+  }
+  .certification-badge-icon {
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+  }
+  .certification-badge-label {
+    font-size: 0.66rem;
+  }
+}
