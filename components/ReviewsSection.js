@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function getStars(rating) {
   return "*".repeat(rating);
 }
@@ -17,8 +19,21 @@ export function ReviewsSection({ region }) {
             </p>
             <p className="review-text">&quot;{review.text}&quot;</p>
             <div className="review-meta">
-              <strong>{review.name}</strong>
-              <span>{review.region}</span>
+              {review.avatar ? (
+                <div className="review-avatar">
+                  <Image
+                    alt={review.name}
+                    className="review-avatar-img"
+                    height={44}
+                    src={review.avatar}
+                    width={44}
+                  />
+                </div>
+              ) : null}
+              <div>
+                <strong>{review.name}</strong>
+                <span>{review.region}</span>
+              </div>
             </div>
           </article>
         ))}
