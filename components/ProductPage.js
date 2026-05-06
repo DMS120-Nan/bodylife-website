@@ -104,6 +104,16 @@ export function ProductPage({ product, region }) {
             Gentle enough for daily use. Lightweight, no heavy residue.
           </p>
           <TrustBadges />
+          <div className="product-audience-tags">
+            <p className="product-audience-title">Suitable for</p>
+            <div className="product-audience-list">
+              <span className="product-audience-tag">✓ Sensitive skin</span>
+              <span className="product-audience-tag">✓ Pregnancy-safe</span>
+              <span className="product-audience-tag">✓ All ages</span>
+              <span className="product-audience-tag">✓ Face & body</span>
+              <span className="product-audience-tag">✓ Eczema & rosacea</span>
+            </div>
+          </div>
           <CertificationBadges />
         </div>
       </section>

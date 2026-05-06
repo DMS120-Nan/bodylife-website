@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AudienceSection } from "./AudienceSection";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { BrandSignatureSection } from "./BrandSignatureSection";
 import { CertificationBadges } from "./CertificationBadges";
@@ -52,6 +53,24 @@ export function HomePage({ region }) {
           </div>
         </div>
       </section>
+
+      <div className="trust-ticker">
+        <div className="trust-ticker-track">
+          <span>Sensitive Skin Friendly</span>
+          <span>·</span>
+          <span>Pregnancy Safe</span>
+          <span>·</span>
+          <span>All Ages</span>
+          <span>·</span>
+          <span>Face & Body</span>
+          <span>·</span>
+          <span>Dermatologist Recommended</span>
+          <span>·</span>
+          <span>Fragrance Free</span>
+          <span>·</span>
+          <span>Clinically Tested</span>
+        </div>
+      </div>
 
       <HomeTrustSection />
 
@@ -118,6 +137,8 @@ export function HomePage({ region }) {
       </section>
 
       <ReviewsSection region={region} />
+
+      <AudienceSection />
 
       <section className="section result-section" id="results">
         <div className="result-copy">
