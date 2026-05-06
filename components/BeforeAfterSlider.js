@@ -1,65 +1,58 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 const sets = [
-  { before: "/images/results-before.png", after: "/images/results-after.png", label: "Face · 4 weeks" },
-  { before: "/images/results-before-2.png", after: "/images/results-after-2.png", label: "Arms · 4 weeks" },
-  { before: "/images/results-before-3.png", after: "/images/results-after-3.png", label: "Neck · 4 weeks" },
+  { id: "face", label: "Face", before: "/images/results-before.png", after: "/images/results-after.png" },
+  { id: "arms", label: "Arms", before: "/images/results-before-2.png", after: "/images/results-after-2.png" },
+  { id: "neck", label: "Neck", before: "/images/results-before-3.png", after: "/images/results-after-3.png" },
 ];
 
 export function BeforeAfterSlider() {
   const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % sets.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
   const set = sets[current];
 
   return (
-    <div className="ba-slider">
-      <div className="ba-slider-images">
-        <div className="result-comparison-card">
-          <div className="result-comparison-label">Before</div>
-          <div className="result-comparison-img">
+    <div className="ba-widget">
+      <div className="ba-tabs">
+        {sets.map((s, i) => (
+          <button
+            key={s.id}
+            className={`ba-tab ${i === current ? "ba-tab--active" : ""}`}
+            onClick={() => setCurrent(i)}
+          >
+            {s.label}
+          </button>
+        ))}
+      </div>
+      <div className="ba-images">
+        <div className="ba-image-card">
+          <span className="ba-image-label">Before</span>
+          <div className="ba-image-wrapper">
             <Image
               alt={`Before - ${set.label}`}
               src={set.before}
               fill
-              sizes="(max-width: 700px) 45vw, 20vw"
-              className="result-photo"
+              sizes="(max-width: 700px) 42vw, 280px"
+              className="ba-photo"
             />
           </div>
+          <span className="ba-image-caption">Day 1</span>
         </div>
-        <div className="result-comparison-card">
-          <div className="result-comparison-label result-comparison-label--after">After</div>
-          <div className="result-comparison-img">
+        <div className="ba-arrow">→</div>
+        <div className="ba-image-card">
+          <span className="ba-image-label ba-image-label--after">After</span>
+          <div className="ba-image-wrapper">
             <Image
               alt={`After - ${set.label}`}
               src={set.after}
               fill
-              sizes="(max-width: 700px) 45vw, 20vw"
-              className="result-photo"
+              sizes="(max-width: 700px) 42vw, 280px"
+              className="ba-photo"
             />
           </div>
-        </div>
-      </div>
-      <div className="ba-slider-controls">
-        <p className="ba-slider-label">{set.label}</p>
-        <div className="ba-slider-dots">
-          {sets.map((_, i) => (
-            <button
-              key={i}
-              className={`ba-slider-dot ${i === current ? "ba-slider-dot--active" : ""}`}
-              onClick={() => setCurrent(i)}
-              aria-label={`View comparison ${i + 1}`}
-            />
-          ))}
+          <span className="ba-image-caption">Week 4</span>
         </div>
       </div>
     </div>

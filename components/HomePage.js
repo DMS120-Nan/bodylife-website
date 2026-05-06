@@ -119,18 +119,23 @@ export function HomePage({ region }) {
             Shop daily care
           </Link>
         </div>
-        <div className="result-images-wrapper">
-          <div className="result-comparison-image" aria-label="Skincare result comparison image">
-            <Image
-              alt="Consistent skincare use comparison"
-              className="result-photo"
-              fill
-              sizes="(max-width: 700px) 100vw, 42vw"
-              src="/images/results-comparison.png"
-            />
-          </div>
-          <BeforeAfterSlider />
+        <div className="result-comparison-image" aria-label="Skincare result comparison image">
+          <Image
+            alt="Consistent skincare use comparison"
+            className="result-photo"
+            fill
+            sizes="(max-width: 700px) 100vw, 42vw"
+            src="/images/results-comparison.png"
+          />
         </div>
+      </section>
+
+      <section className="section ba-section">
+        <div className="section-heading">
+          <p className="eyebrow">Real results</p>
+          <h2>See the difference.</h2>
+        </div>
+        <BeforeAfterSlider />
       </section>
 
       <BrandSignatureSection />
