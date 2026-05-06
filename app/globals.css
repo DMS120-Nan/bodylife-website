@@ -579,8 +579,9 @@ a {
 .review-stars {
   color: var(--gold);
   font-weight: 600;
-  letter-spacing: 0.16em;
   margin: 0 0 18px;
+  display: flex;
+  gap: 3px;
 }
 
 .review-content blockquote {
@@ -598,6 +599,66 @@ a {
 
 .review-actions {
   margin-top: 28px;
+}
+
+.derm-content {
+  text-align: left;
+}
+
+.derm-layout {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.derm-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+}
+
+.derm-content blockquote {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0 0 28px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.derm-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.derm-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.derm-author strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.derm-author span {
+  display: block;
+  color: var(--soft-beige);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-top: 2px;
 }
 
 .result-section {
@@ -828,6 +889,14 @@ a {
 
 .review-card .review-stars {
   margin-bottom: 14px;
+  display: flex;
+  gap: 3px;
+}
+
+.review-card .review-stars svg {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 1px 2px rgba(138, 122, 92, 0.3));
 }
 
 .review-text {

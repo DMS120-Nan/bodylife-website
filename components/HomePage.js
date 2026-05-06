@@ -93,16 +93,25 @@ export function HomePage({ region }) {
       </section>
 
       <section className="review-section">
-        <div className="review-content">
-          <p className="review-stars" aria-label="5 star review">
-            *****
-          </p>
-          <blockquote>&quot;{region.home.review}&quot;</blockquote>
-          <p>{region.label} customer</p>
-          <div className="review-actions">
-            <Link className="primary-button cta-button" href={`/${region.code}/products`}>
-              Shop Now
-            </Link>
+        <div className="review-content derm-content">
+          <div className="derm-layout">
+            <div className="derm-text">
+              <p className="derm-badge">Dermatologist Recommended</p>
+              <blockquote>&quot;For patients with sensitive or reactive skin, I always recommend starting with gentle, barrier-supporting formulas. Products like these — free from harsh irritants and focused on hydration — are exactly what I suggest for building a sustainable daily routine.&quot;</blockquote>
+              <div className="derm-author">
+                <Image
+                  alt="Dr. Sarah Mitchell"
+                  src="/images/dr-avatar.png"
+                  width={56}
+                  height={56}
+                  className="derm-avatar"
+                />
+                <div>
+                  <strong>Dr. Sarah Mitchell</strong>
+                  <span>Board-Certified Dermatologist</span>
+                </div>
+              </div>
+            </div>
           </div>
           <TrustBadges tone="dark" />
         </div>
