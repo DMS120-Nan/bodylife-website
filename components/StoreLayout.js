@@ -34,7 +34,7 @@ export function StoreLayout({ children, region }) {
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="https://www.tiktok.com/@bodylife?_r=1&_t=ZP-968R5KTLLl0" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@bodylife" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 12a4 4 0 1 0 4 4V4c1 3 4 4 6 4" />
                 </svg>
