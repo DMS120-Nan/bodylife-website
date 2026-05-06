@@ -19,6 +19,7 @@ export function Navbar({ region }) {
         <Link href={`/${region.code}`}>Home</Link>
         <Link href={`/${region.code}/products`}>Products</Link>
         <Link href={`/${region.code}/contact`}>Contact</Link>
+        <Link href={`/${region.code}/shipping`}>Shipping</Link>
       </nav>
       <div className="region-switcher" aria-label="Region selector">
         {regions.map((item) => (
