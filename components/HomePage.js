@@ -80,6 +80,18 @@ export function HomePage({ region }) {
 
       <ClinicalProofSection />
 
+      <section className="diversity-banner">
+        <Image
+          alt="Bodylife is for every skin type and every person"
+          src="/images/diversity-banner.png"
+          width={1400}
+          height={400}
+          className="diversity-banner-img"
+          sizes="100vw"
+          priority
+        />
+      </section>
+
       <CertificationBadges />
 
       <section className="section benefit-section">
