@@ -95,21 +95,21 @@ export function HomePage({ region }) {
       <section className="review-section">
         <div className="review-content derm-content">
           <div className="derm-layout">
+            <div className="derm-photo">
+              <Image
+                alt="Dr. Sarah Mitchell"
+                src="/images/dr-avatar.png"
+                width={400}
+                height={400}
+                className="derm-photo-img"
+              />
+            </div>
             <div className="derm-text">
               <p className="derm-badge">Dermatologist Recommended</p>
               <blockquote>&quot;For sensitive skin, I recommend gentle, barrier-supporting formulas focused on hydration. These are exactly what I suggest for a sustainable daily routine.&quot;</blockquote>
-              <div className="derm-author">
-                <Image
-                  alt="Dr. Sarah Mitchell"
-                  src="/images/dr-avatar.png"
-                  width={80}
-                  height={80}
-                  className="derm-avatar"
-                />
-                <div>
-                  <strong>Dr. Sarah Mitchell</strong>
-                  <span>Board-Certified Dermatologist</span>
-                </div>
+              <div className="derm-author-info">
+                <strong>Dr. Sarah Mitchell</strong>
+                <span>Board-Certified Dermatologist</span>
               </div>
             </div>
           </div>
