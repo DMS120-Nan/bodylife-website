@@ -97,13 +97,13 @@ export function HomePage({ region }) {
           <div className="derm-layout">
             <div className="derm-text">
               <p className="derm-badge">Dermatologist Recommended</p>
-              <blockquote>&quot;For patients with sensitive or reactive skin, I always recommend starting with gentle, barrier-supporting formulas. Products like these — free from harsh irritants and focused on hydration — are exactly what I suggest for building a sustainable daily routine.&quot;</blockquote>
+              <blockquote>&quot;For sensitive skin, I recommend gentle, barrier-supporting formulas focused on hydration. These are exactly what I suggest for a sustainable daily routine.&quot;</blockquote>
               <div className="derm-author">
                 <Image
                   alt="Dr. Sarah Mitchell"
                   src="/images/dr-avatar.png"
-                  width={56}
-                  height={56}
+                  width={80}
+                  height={80}
                   className="derm-avatar"
                 />
                 <div>

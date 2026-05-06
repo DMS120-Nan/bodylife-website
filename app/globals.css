@@ -639,8 +639,8 @@ a {
 }
 
 .derm-avatar {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -649,14 +649,14 @@ a {
 .derm-author strong {
   display: block;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
 .derm-author span {
   display: block;
   color: var(--soft-beige);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 500;
   margin-top: 2px;
 }
