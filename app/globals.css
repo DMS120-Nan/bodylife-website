@@ -670,13 +670,6 @@ a {
   object-fit: cover;
 }
 
-.result-comparison-caption {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-align: center;
-}
-
 .brand-signature-section {
   background: var(--surface);
   border-top: 1px solid var(--line);
@@ -2169,4 +2162,56 @@ a {
   .reviews-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.ba-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ba-slider-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ba-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.ba-slider-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.ba-slider-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.ba-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--muted);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ba-slider-dot--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.2);
+}
+
+.ba-slider-dot:hover {
+  border-color: var(--accent);
 }
