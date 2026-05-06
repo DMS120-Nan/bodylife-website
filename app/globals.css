@@ -2455,14 +2455,18 @@ a {
 .diversity-banner {
   width: 100%;
   overflow: hidden;
+  margin: 40px 0;
+  padding: 0 24px;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .diversity-banner-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  max-height: 360px;
+  border-radius: 16px;
 }
 
 /* Footer */
