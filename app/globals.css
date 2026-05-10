@@ -753,11 +753,18 @@ html {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
+  color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
   transition: border-color 240ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
+}
+
+.product-card > article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -766,6 +773,208 @@ html {
     box-shadow: var(--shadow-card);
     transform: translateY(-2px);
   }
+
+  .product-card:hover .product-card-cta {
+    color: var(--ink);
+  }
+}
+
+.product-card-rating {
+  margin: 0 0 12px;
+}
+
+.product-card-cta {
+  align-items: center;
+  color: var(--accent-dark);
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 500;
+  gap: 4px;
+  letter-spacing: 0.005em;
+  transition: color 200ms var(--ease-out);
+}
+
+/* Product Rating */
+.product-rating {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.86rem;
+  gap: 10px;
+}
+
+.product-rating-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.product-rating-meta {
+  align-items: center;
+  color: var(--muted);
+  display: inline-flex;
+  font-feature-settings: "tnum";
+  font-size: 0.86rem;
+  gap: 6px;
+  letter-spacing: -0.005em;
+}
+
+.product-rating-meta strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.product-rating-divider {
+  color: var(--line);
+}
+
+.product-rating-sm {
+  font-size: 0.78rem;
+}
+
+.product-rating-sm svg {
+  height: 12px;
+  width: 12px;
+}
+
+.product-rating-sm .product-rating-meta {
+  font-size: 0.78rem;
+}
+
+/* PDP info section */
+.product-info-section {
+  padding-top: var(--space-tight);
+  padding-bottom: var(--space-tight);
+}
+
+.product-info-grid {
+  display: grid;
+  gap: 48px 56px;
+}
+
+@media (min-width: 800px) {
+  .product-info-grid {
+    grid-template-columns: 1.1fr 1.1fr 0.8fr;
+  }
+}
+
+.product-info-block .eyebrow {
+  margin-bottom: 22px;
+}
+
+.product-info-list {
+  display: grid;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-info-list li {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 4px;
+  padding-top: 16px;
+}
+
+.product-info-list strong {
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.product-info-list span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.product-info-steps {
+  counter-reset: step;
+  display: grid;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-info-steps li {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 32px 1fr;
+  padding-top: 16px;
+}
+
+.product-info-steps span {
+  color: var(--muted-soft);
+  font-feature-settings: "tnum";
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.product-info-steps p {
+  color: var(--ink);
+  font-size: 0.96rem;
+  letter-spacing: -0.005em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.product-info-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-info-pills li {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 500;
+  gap: 6px;
+  padding: 7px 12px;
+  text-decoration: line-through;
+  text-decoration-color: var(--line);
+}
+
+.product-detail-rating {
+  margin: 4px 0 14px;
+}
+
+.product-benefit-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 22px 0 28px;
+  padding: 0;
+}
+
+.product-benefit-list li {
+  align-items: flex-start;
+  color: var(--ink);
+  display: flex;
+  font-size: 0.94rem;
+  gap: 10px;
+  letter-spacing: -0.005em;
+  line-height: 1.5;
+}
+
+.product-benefit-list li::before {
+  background: var(--accent);
+  border-radius: 999px;
+  content: "";
+  flex-shrink: 0;
+  height: 6px;
+  margin-top: 8px;
+  width: 6px;
 }
 
 .product-image,

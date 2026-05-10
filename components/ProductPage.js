@@ -9,6 +9,7 @@ import { CertificationBadges } from "./CertificationBadges";
 import { ClinicalCredibilitySection } from "./ClinicalCredibilitySection";
 import { ClinicalProofSection } from "./ClinicalProofSection";
 import { HomeTrustSection } from "./HomeTrustSection";
+import { ProductRating } from "./ProductRating";
 import { ProductViewTracker } from "./ProductViewTracker";
 import { ReviewsSection } from "./ReviewsSection";
 import { TextureSection } from "./TextureSection";
@@ -49,11 +50,20 @@ export function ProductPage({ product, region }) {
           </Link>
           <p className="eyebrow">{product.category}</p>
           <h1>{product.name}</h1>
+          <ProductRating reviews={region.pdp.reviews} className="product-detail-rating" />
           <p className="product-benefit-headline">
             {region.pdp.headlinePrefix}
           </p>
           <p className="product-price">{selectedPrice}</p>
           <p className="product-description">{product.description}</p>
+
+          {product.keyBenefits ? (
+            <ul className="product-benefit-list" aria-label="Key benefits">
+              {product.keyBenefits.map((benefit) => (
+                <li key={benefit}>{benefit}</li>
+              ))}
+            </ul>
+          ) : null}
           <div className="option-row">
             <span>Size</span>
             <div className="size-list">
@@ -112,6 +122,49 @@ export function ProductPage({ product, region }) {
           <CertificationBadges />
         </div>
       </section>
+
+      {product.keyIngredients || product.howToUse || product.notIncluded ? (
+        <section className="section product-info-section">
+          <div className="product-info-grid">
+            {product.keyIngredients ? (
+              <div className="product-info-block">
+                <p className="eyebrow">Key ingredients</p>
+                <ul className="product-info-list">
+                  {product.keyIngredients.map((ing) => (
+                    <li key={ing.name}>
+                      <strong>{ing.name}</strong>
+                      <span>{ing.role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            {product.howToUse ? (
+              <div className="product-info-block">
+                <p className="eyebrow">How to use</p>
+                <ol className="product-info-steps">
+                  {product.howToUse.map((step, index) => (
+                    <li key={step}>
+                      <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                      <p>{step}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ) : null}
+            {product.notIncluded ? (
+              <div className="product-info-block product-info-block-narrow">
+                <p className="eyebrow">What we left out</p>
+                <ul className="product-info-pills">
+                  {product.notIncluded.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <TextureSection />
 

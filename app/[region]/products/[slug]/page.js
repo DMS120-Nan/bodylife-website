@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ProductPage } from "../../../../components/ProductPage";
+import { ProductSchema } from "../../../../components/ProductSchema";
 import { getValidatedRegion, regions } from "../../../../lib/regions";
 import { createOpenGraph, getCanonicalUrl } from "../../../../lib/seo";
 import { getProductByHandle, getProducts } from "../../../../lib/shopify";
@@ -57,5 +58,10 @@ export default async function RegionalProductPage({ params }) {
     notFound();
   }
 
-  return <ProductPage product={product} region={region} />;
+  return (
+    <>
+      <ProductSchema product={product} region={region} />
+      <ProductPage product={product} region={region} />
+    </>
+  );
 }
