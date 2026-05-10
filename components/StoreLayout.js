@@ -2,6 +2,7 @@ import Link from "next/link";
 import { hasShopifyConfig } from "../lib/shopify";
 import { CartProvider } from "./CartProvider";
 import { Navbar } from "./Navbar";
+import { NewsletterForm } from "./NewsletterForm";
 
 export function StoreLayout({ children, region }) {
   const shopifyReady = hasShopifyConfig();
@@ -11,21 +12,49 @@ export function StoreLayout({ children, region }) {
       <Navbar region={region} />
       <main id="main">{children}</main>
       <footer className="site-footer">
+        <section className="footer-newsletter" aria-label="Newsletter signup">
+          <div className="footer-newsletter-inner">
+            <div className="footer-newsletter-copy">
+              <p className="eyebrow">Stay close</p>
+              <h2>Quiet notes from our routine to yours.</h2>
+              <p className="footer-newsletter-lead">
+                One short letter a month. Skin science we&apos;re reading,
+                routine ideas, and the occasional early access. No noise.
+              </p>
+            </div>
+            <NewsletterForm region={region} />
+          </div>
+        </section>
         <div className="footer-inner">
-          <div className="footer-col">
+          <div className="footer-col footer-col-brand">
             <h4>Bodylife</h4>
             <p className="footer-tagline">{region.footerText}</p>
           </div>
           <div className="footer-col">
             <h4>Shop</h4>
             <nav className="footer-nav">
-              <Link href={`/${region.code}/products`}>All Products</Link>
-              <Link href={`/${region.code}/contact`}>Contact</Link>
-              <Link href={`/${region.code}/shipping`}>Shipping & Returns</Link>
+              <Link href={`/${region.code}/products`}>All products</Link>
+              <Link href={`/${region.code}/products/daily-hydration-gel`}>
+                Daily Hydration Gel
+              </Link>
+              <Link href={`/${region.code}/products/smooth-renew-serum`}>
+                Smooth Renew Serum
+              </Link>
+              <Link href={`/${region.code}/products/barrier-comfort-cream`}>
+                Barrier Comfort Cream
+              </Link>
             </nav>
           </div>
           <div className="footer-col">
-            <h4>Follow Us</h4>
+            <h4>Help</h4>
+            <nav className="footer-nav">
+              <Link href={`/${region.code}/contact`}>Contact</Link>
+              <Link href={`/${region.code}/shipping`}>Shipping & returns</Link>
+              <Link href={`/${region.code}/about`}>About Bodylife</Link>
+            </nav>
+          </div>
+          <div className="footer-col">
+            <h4>Follow</h4>
             <div className="footer-social">
               <a href="https://www.instagram.com/bodylife_official?igsh=N2pydWVqaG41bHl2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

@@ -16,10 +16,21 @@ export function Navbar({ region }) {
         Bodylife
       </Link>
       <nav className="site-nav" aria-label="Primary navigation">
-        <Link href={`/${region.code}`}>Home</Link>
-        <Link href={`/${region.code}/products`}>Products</Link>
-        <Link href={`/${region.code}/contact`}>Contact</Link>
-        <Link href={`/${region.code}/shipping`}>Shipping</Link>
+        <Link href={`/${region.code}`} aria-current={pathname === `/${region.code}` ? "page" : undefined}>
+          Home
+        </Link>
+        <Link href={`/${region.code}/products`} aria-current={pathname.startsWith(`/${region.code}/products`) ? "page" : undefined}>
+          Products
+        </Link>
+        <Link href={`/${region.code}/about`} aria-current={pathname === `/${region.code}/about` ? "page" : undefined}>
+          About
+        </Link>
+        <Link href={`/${region.code}/contact`} aria-current={pathname === `/${region.code}/contact` ? "page" : undefined}>
+          Contact
+        </Link>
+        <Link href={`/${region.code}/shipping`} aria-current={pathname === `/${region.code}/shipping` ? "page" : undefined}>
+          Shipping
+        </Link>
       </nav>
       <div className="region-switcher" aria-label="Region selector">
         {regions.map((item) => (
