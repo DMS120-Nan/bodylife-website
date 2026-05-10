@@ -74,6 +74,42 @@ export function StoreLayout({ children, region }) {
           </div>
         </div>
         <div className="footer-bottom">
+          <div className="footer-payments" aria-label="Accepted payment methods">
+            <span className="footer-payments-label">Secure payments</span>
+            <ul>
+              <li title="Visa">
+                <svg viewBox="0 0 38 24" aria-label="Visa" fill="none">
+                  <rect width="38" height="24" rx="4" fill="currentColor" opacity="0.06" />
+                  <text x="19" y="16" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="9" fontWeight="700" fill="currentColor" letterSpacing="0.6">VISA</text>
+                </svg>
+              </li>
+              <li title="Mastercard">
+                <svg viewBox="0 0 38 24" aria-label="Mastercard" fill="none">
+                  <rect width="38" height="24" rx="4" fill="currentColor" opacity="0.06" />
+                  <circle cx="15" cy="12" r="6" fill="currentColor" opacity="0.45" />
+                  <circle cx="23" cy="12" r="6" fill="currentColor" opacity="0.55" />
+                </svg>
+              </li>
+              <li title="American Express">
+                <svg viewBox="0 0 38 24" aria-label="American Express" fill="none">
+                  <rect width="38" height="24" rx="4" fill="currentColor" opacity="0.06" />
+                  <text x="19" y="16" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="7" fontWeight="700" fill="currentColor" letterSpacing="0.4">AMEX</text>
+                </svg>
+              </li>
+              <li title="Apple Pay">
+                <svg viewBox="0 0 38 24" aria-label="Apple Pay" fill="none">
+                  <rect width="38" height="24" rx="4" fill="currentColor" opacity="0.06" />
+                  <text x="19" y="16" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="7" fontWeight="700" fill="currentColor" letterSpacing="0.2">A.PAY</text>
+                </svg>
+              </li>
+              <li title="PayPal">
+                <svg viewBox="0 0 38 24" aria-label="PayPal" fill="none">
+                  <rect width="38" height="24" rx="4" fill="currentColor" opacity="0.06" />
+                  <text x="19" y="16" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="7" fontWeight="700" fill="currentColor" letterSpacing="0.2">PayPal</text>
+                </svg>
+              </li>
+            </ul>
+          </div>
           <p>© {new Date().getFullYear()} Bodylife. All rights reserved.</p>
         </div>
       </footer>

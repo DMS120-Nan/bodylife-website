@@ -4232,14 +4232,208 @@ html {
 }
 
 .footer-bottom {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 0 32px;
   text-align: center;
-  padding: 20px 0;
 }
 
 .footer-bottom p {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.4);
   margin: 0;
+}
+
+.footer-payments {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-payments-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-payments ul {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-payments li {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  width: 44px;
+}
+
+.footer-payments svg {
+  height: 100%;
+  width: 100%;
+}
+
+/* Sticky add-to-cart bar (desktop only) */
+.sticky-add-bar {
+  background: rgba(255, 250, 242, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+  bottom: 0;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.6) inset, 0 -8px 32px rgba(23, 33, 31, 0.08);
+  display: none;
+  left: 0;
+  opacity: 0;
+  padding: 14px 24px;
+  position: fixed;
+  right: 0;
+  transform: translateY(100%);
+  transition: opacity 280ms var(--ease-out), transform 320ms var(--ease-out);
+  z-index: 14;
+}
+
+@media (min-width: 821px) {
+  .sticky-add-bar {
+    display: block;
+  }
+}
+
+.sticky-add-bar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sticky-add-bar-inner {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.sticky-add-bar-info {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sticky-add-bar-name {
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sticky-add-bar-price {
+  color: var(--ink);
+  font-feature-settings: "tnum";
+  font-size: 1.04rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.sticky-add-bar-button {
+  flex: 0 0 auto;
+  min-height: 46px;
+  min-width: 180px;
+}
+
+/* Home FAQ */
+.home-faq-section {
+  padding-top: var(--space-tight);
+}
+
+.home-faq-list {
+  display: grid;
+  gap: 0;
+  max-width: 820px;
+}
+
+.home-faq-item {
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+}
+
+.home-faq-item:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+
+.home-faq-item summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.04rem;
+  font-weight: 500;
+  gap: 24px;
+  justify-content: space-between;
+  letter-spacing: -0.012em;
+  list-style: none;
+  transition: color 200ms var(--ease-out);
+}
+
+.home-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-faq-item summary:hover {
+    color: var(--accent-dark);
+  }
+}
+
+.home-faq-mark {
+  background: var(--ink);
+  border-radius: 999px;
+  flex-shrink: 0;
+  height: 1.5px;
+  position: relative;
+  transition: transform 240ms var(--ease-out);
+  width: 14px;
+}
+
+.home-faq-mark::before {
+  background: var(--ink);
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(90deg);
+  transition: opacity 240ms var(--ease-out);
+  width: 100%;
+}
+
+.home-faq-item[open] .home-faq-mark::before {
+  opacity: 0;
+}
+
+.home-faq-item p {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.72;
+  margin: 14px 0 0;
+  max-width: 700px;
 }
 
 @media (max-width: 768px) {

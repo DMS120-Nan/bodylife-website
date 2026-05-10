@@ -7,6 +7,7 @@ import { BundleHighlight } from "./BundleHighlight";
 import { CertificationBadges } from "./CertificationBadges";
 import { ClinicalCredibilitySection } from "./ClinicalCredibilitySection";
 import { ClinicalProofSection } from "./ClinicalProofSection";
+import { HomeFaqSection } from "./HomeFaqSection";
 import { HomeTrustSection } from "./HomeTrustSection";
 import { ProductGrid } from "./ProductGrid";
 import { ReviewsSection } from "./ReviewsSection";
@@ -182,6 +183,8 @@ export function HomePage({ region }) {
         </div>
         <BeforeAfterSlider />
       </section>
+
+      <HomeFaqSection />
 
       <BrandSignatureSection />
     </>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { formatPrice, formatSubscriptionPrice } from "../lib/regions";
 import { AddToCartButton } from "./AddToCartButton";
 import { CertificationBadges } from "./CertificationBadges";
@@ -12,6 +12,7 @@ import { HomeTrustSection } from "./HomeTrustSection";
 import { ProductRating } from "./ProductRating";
 import { ProductViewTracker } from "./ProductViewTracker";
 import { ReviewsSection } from "./ReviewsSection";
+import { StickyAddToCart } from "./StickyAddToCart";
 import { TextureSection } from "./TextureSection";
 import { TrustBadges } from "./TrustBadges";
 import { WhyThisWorksSection } from "./WhyThisWorksSection";
@@ -22,6 +23,7 @@ export function ProductPage({ product, region }) {
   const [selectedVariant, setSelectedVariant] = useState(variants[0]);
   const [quantity, setQuantity] = useState(1);
   const [purchaseMode, setPurchaseMode] = useState("onetime");
+  const cartCtaRef = useRef(null);
   const selectedPrice = formatPrice(product, region, selectedVariant);
   const subscriptionPrice = formatSubscriptionPrice(product, region, selectedVariant);
   const subscription = region.subscription;
@@ -179,13 +181,15 @@ export function ProductPage({ product, region }) {
               </button>
             </div>
           </div>
-          <AddToCartButton
-            mode={purchaseMode}
-            product={product}
-            region={region}
-            variant={selectedVariant}
-            quantity={quantity}
-          />
+          <div ref={cartCtaRef}>
+            <AddToCartButton
+              mode={purchaseMode}
+              product={product}
+              region={region}
+              variant={selectedVariant}
+              quantity={quantity}
+            />
+          </div>
           <p className="product-cta-reassurance">
             Gentle enough for daily use. Lightweight, no heavy residue.
           </p>
@@ -288,6 +292,16 @@ export function ProductPage({ product, region }) {
           quantity={quantity}
         />
       </div>
+
+      <StickyAddToCart
+        displayPrice={displayPrice}
+        mode={purchaseMode}
+        product={product}
+        quantity={quantity}
+        region={region}
+        variant={selectedVariant}
+        watchRef={cartCtaRef}
+      />
     </>
   );
 }
