@@ -34,6 +34,31 @@ export function CartProvider({ children, region, shopifyReady = false }) {
     }
   }, [isHydrated, items]);
 
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    if (isOpen) {
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previousOverflow;
+      };
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   const regionItems = useMemo(
     () => items.filter((item) => item.regionCode === region.code),
     [items, region.code]

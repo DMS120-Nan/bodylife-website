@@ -84,7 +84,18 @@ export function CartDrawer({ region, shopifyReady }) {
       </div>
 
       {visibleRegionItems.length === 0 ? (
-        <p className="cart-empty">Your cart is empty.</p>
+        <div className="cart-empty">
+          <div className="cart-empty-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 9h18l-2 14a3 3 0 0 1-3 2.6H12a3 3 0 0 1-3-2.6L7 9Z" />
+              <path d="M12 9V7a4 4 0 0 1 8 0v2" />
+            </svg>
+          </div>
+          <p className="cart-empty-title">Your cart is empty.</p>
+          <p className="cart-empty-lead">
+            Add a product and it will show up here.
+          </p>
+        </div>
       ) : (
         <div className="cart-items">
           {visibleRegionItems.map((item) => (

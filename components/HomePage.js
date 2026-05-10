@@ -29,7 +29,7 @@ export function HomePage({ region }) {
             <p className="hero-lead mt-7 max-w-[520px] text-[1.04rem] leading-[1.78] text-bodylife-muted">
               {region.home.description}
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-7">
+            <div className="hero-actions mt-10 flex flex-wrap items-center gap-7">
               <Link className="hero-cta-primary inline-flex min-h-[54px] min-w-[150px] items-center justify-center rounded-md bg-bodylife-green px-7 text-[0.96rem] font-semibold text-white" href={`/${region.code}/products`}>
                 Shop Now
               </Link>

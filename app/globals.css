@@ -222,6 +222,59 @@ html {
   font-feature-settings: "ss01", "kern";
 }
 
+.hero-eyebrow,
+.hero-title,
+.hero-lead,
+.hero .inline-trust-labels {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+}
+
+.hero .hero-actions {
+  opacity: 1;
+  transition: opacity 600ms var(--ease-out);
+}
+
+@starting-style {
+  .hero-eyebrow {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .hero-title {
+    opacity: 0;
+    transform: translateY(12px);
+    transition-delay: 60ms;
+  }
+  .hero-lead {
+    opacity: 0;
+    transform: translateY(10px);
+    transition-delay: 120ms;
+  }
+  .hero .hero-actions {
+    opacity: 0;
+    transition-delay: 200ms;
+  }
+  .hero .inline-trust-labels {
+    opacity: 0;
+    transform: translateY(6px);
+    transition-delay: 280ms;
+  }
+}
+
+.hero-panel {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+
+@starting-style {
+  .hero-panel {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
 .hero-panel {
   box-shadow: var(--shadow-hero);
   position: relative;
@@ -1276,15 +1329,17 @@ html {
 
 .mobile-cart-bar {
   align-items: center;
-  background: var(--surface);
+  background: rgba(255, 250, 242, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-top: 1px solid var(--line);
   bottom: 0;
-  box-shadow: 0 -10px 30px rgba(23, 33, 31, 0.1);
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.6) inset, 0 -8px 24px rgba(23, 33, 31, 0.06);
   display: none;
   gap: 14px;
   justify-content: space-between;
   left: 0;
-  padding: 12px 16px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
   position: fixed;
   right: 0;
   z-index: 15;
@@ -1292,19 +1347,26 @@ html {
 
 .mobile-cart-bar div {
   display: grid;
+  gap: 2px;
   min-width: 0;
 }
 
 .mobile-cart-bar span {
-  font-size: 0.86rem;
-  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .mobile-cart-bar strong {
-  color: var(--accent-dark);
+  color: var(--ink);
+  font-feature-settings: "tnum";
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
 }
 
 .mobile-cart-button {
@@ -1415,9 +1477,47 @@ html {
 }
 
 .cart-empty {
-  align-self: start;
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.cart-empty-mark {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
   color: var(--muted);
-  margin-top: 32px;
+  display: inline-flex;
+  height: 56px;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 56px;
+}
+
+.cart-empty-mark svg {
+  height: 24px;
+  width: 24px;
+}
+
+.cart-empty-title {
+  color: var(--ink);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin: 0 0 8px;
+}
+
+.cart-empty-lead {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .cart-items {
@@ -1667,6 +1767,67 @@ html {
   max-width: 680px;
   padding: 140px 24px;
   text-align: center;
+}
+
+.not-found-page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+  padding: var(--space-section-lg) 24px;
+}
+
+.not-found-inner {
+  max-width: 540px;
+  text-align: center;
+}
+
+.not-found-eyebrow {
+  color: var(--muted-soft);
+  font-feature-settings: "tnum";
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  margin: 0 0 28px;
+}
+
+.not-found-page h1 {
+  font-size: clamp(1.85rem, 5vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.16;
+  margin: 0 0 18px;
+}
+
+.not-found-lead {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.78;
+  margin: 0 0 36px;
+}
+
+.not-found-actions {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+}
+
+.not-found-secondary {
+  border-bottom: 1px solid currentColor;
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 500;
+  padding-bottom: 2px;
+  transition: color 200ms var(--ease-out), border-color 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .not-found-secondary:hover {
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
 }
 
 .lp-page {
