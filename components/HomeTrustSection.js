@@ -93,20 +93,20 @@ function TrustIcon({ type }) {
 
 export function HomeTrustSection() {
   return (
-    <section className="bg-bodylife-paper px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+    <section className="home-trust-section bg-bodylife-paper px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
       <div className="mx-auto grid max-w-[1180px] grid-cols-2 gap-y-12 divide-bodylife-line sm:grid-cols-3 lg:grid-cols-7 lg:divide-x">
         {trustItems.map((item) => (
           <article
-            className="px-3 text-center lg:px-5"
+            className="trust-pillar px-3 text-center lg:px-5"
             key={item.title}
           >
-            <div className="mx-auto mb-5 h-10 w-10 text-bodylife-ink [&_svg]:h-full [&_svg]:w-full [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.4] [&_svg]:stroke-linecap-round [&_svg]:stroke-linejoin-round">
+            <div className="trust-pillar-icon mx-auto mb-5 h-10 w-10 text-bodylife-ink [&_svg]:h-full [&_svg]:w-full [&_svg]:fill-none [&_svg]:stroke-current [&_svg]:stroke-[1.2] [&_svg]:stroke-linecap-round [&_svg]:stroke-linejoin-round">
               <TrustIcon type={item.icon} />
             </div>
-            <h3 className="mx-auto max-w-[150px] text-[0.88rem] font-semibold leading-relaxed text-bodylife-ink">
+            <h3 className="mx-auto max-w-[150px] text-[0.88rem] font-semibold leading-[1.45] tracking-[-0.005em] text-bodylife-ink">
               {item.title}
             </h3>
-            <p className="mx-auto mt-4 max-w-[150px] text-[0.76rem] leading-6 text-bodylife-muted">
+            <p className="mx-auto mt-3 max-w-[150px] text-[0.76rem] leading-[1.6] text-bodylife-muted">
               {item.description}
             </p>
           </article>

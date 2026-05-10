@@ -19,27 +19,27 @@ export function HomePage({ region }) {
     <>
       <section className="hero">
         <div className="mx-auto grid max-w-[1180px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div className="max-w-[620px]">
-            <p className="mb-6 text-[0.76rem] font-semibold uppercase tracking-[0.32em] text-bodylife-muted">
+          <div className="hero-copy max-w-[620px]">
+            <p className="hero-eyebrow mb-6 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-bodylife-muted">
               {region.home.eyebrow}
             </p>
-            <h1 className="max-w-[720px] text-[clamp(2.25rem,6.2vw,4rem)] font-semibold leading-[1.12] text-bodylife-ink">
+            <h1 className="hero-title max-w-[720px] text-[clamp(2.25rem,6.4vw,4.25rem)] font-semibold leading-[1.08] text-bodylife-ink">
               {region.home.title}
             </h1>
-            <p className="mt-7 max-w-[520px] text-[1rem] leading-8 text-bodylife-muted">
+            <p className="hero-lead mt-7 max-w-[520px] text-[1.04rem] leading-[1.78] text-bodylife-muted">
               {region.home.description}
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-7">
-              <Link className="inline-flex min-h-[54px] min-w-[150px] items-center justify-center rounded-md bg-bodylife-green px-7 text-[0.96rem] font-semibold text-white transition hover:opacity-90" href={`/${region.code}/products`}>
+            <div className="mt-10 flex flex-wrap items-center gap-7">
+              <Link className="hero-cta-primary inline-flex min-h-[54px] min-w-[150px] items-center justify-center rounded-md bg-bodylife-green px-7 text-[0.96rem] font-semibold text-white" href={`/${region.code}/products`}>
                 Shop Now
               </Link>
-              <a className="inline-flex min-h-[40px] items-center border-b border-current text-[0.96rem] font-semibold text-bodylife-ink transition hover:text-bodylife-green" href="#results">
+              <a className="hero-cta-secondary inline-flex min-h-[40px] items-center border-b border-current pb-[2px] text-[0.96rem] font-semibold text-bodylife-ink" href="#results">
                 Learn More
               </a>
             </div>
-            <InlineTrustLabels className="mt-7" />
+            <InlineTrustLabels className="mt-8" />
           </div>
-          <div className="relative min-h-[420px] overflow-hidden rounded-lg bg-bodylife-cream sm:min-h-[520px] lg:min-h-[660px]">
+          <div className="hero-panel relative min-h-[420px] overflow-hidden rounded-[14px] bg-bodylife-cream sm:min-h-[520px] lg:min-h-[660px]">
             {heroImage ? (
               <Image
                 alt={heroImage.altText}
