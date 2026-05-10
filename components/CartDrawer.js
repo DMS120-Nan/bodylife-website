@@ -131,6 +131,11 @@ export function CartDrawer({ region, shopifyReady }) {
               <div>
                 <h3>{item.name}</h3>
                 {item.variant ? <p>{item.variant}</p> : null}
+                {item.mode === "subscription" && item.subscriptionLabel ? (
+                  <p className="cart-item-subscription">
+                    Subscribe · {item.subscriptionLabel}
+                  </p>
+                ) : null}
                 <p>{formatCartPrice(item)}</p>
               </div>
               <div className="quantity-control">

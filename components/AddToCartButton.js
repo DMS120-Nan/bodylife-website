@@ -8,23 +8,28 @@ export function AddToCartButton({
   product,
   region,
   variant,
-  quantity = 1
+  quantity = 1,
+  mode = "onetime",
+  label
 }) {
   const { addItem } = useCart();
 
   function handleAddToCart() {
     for (let i = 0; i < quantity; i++) {
-      addItem(product, variant);
+      addItem(product, variant, { mode });
     }
 
     if (region) {
       trackEvent("add_to_cart", {
         ...getProductTrackingPayload(product, region, variant),
         quantity,
-        variant
+        variant,
+        purchase_mode: mode
       });
     }
   }
+
+  const buttonLabel = label || (mode === "subscription" ? "Subscribe & save" : "Add to bag");
 
   return (
     <button
@@ -32,7 +37,7 @@ export function AddToCartButton({
       type="button"
       onClick={handleAddToCart}
     >
-      Add to cart
+      {buttonLabel}
     </button>
   );
 }

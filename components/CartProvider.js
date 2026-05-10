@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { CartDrawer } from "./CartDrawer";
-import { getProductPrice, getProductVariant } from "../lib/regions";
+import { getProductPrice, getProductVariant, getSubscriptionPrice } from "../lib/regions";
 
 const CartContext = createContext(null);
 const CART_STORAGE_KEY = "bodylife-cart";
@@ -65,10 +65,15 @@ export function CartProvider({ children, region, shopifyReady = false }) {
   );
   const itemCount = regionItems.reduce((total, item) => total + item.quantity, 0);
 
-  function addItem(product, variant) {
+  function addItem(product, variant, options = {}) {
+    const { mode = "onetime" } = options;
     const selectedVariant = variant || product.sizes?.[0] || "Default";
     const variantData = getProductVariant(product, selectedVariant);
-    const itemId = `${region.code}:${product.slug}:${selectedVariant}`;
+    const isSubscription = mode === "subscription";
+    const itemId = `${region.code}:${product.slug}:${selectedVariant}:${mode}`;
+    const price = isSubscription
+      ? getSubscriptionPrice(product, region, selectedVariant)
+      : getProductPrice(product, region, selectedVariant);
 
     setItems((currentItems) => {
       const existingItem = currentItems.find((item) => item.id === itemId);
@@ -88,7 +93,9 @@ export function CartProvider({ children, region, shopifyReady = false }) {
           slug: product.slug,
           name: product.name,
           variant: selectedVariant,
-          price: getProductPrice(product, region, selectedVariant),
+          mode,
+          subscriptionLabel: isSubscription ? region.subscription?.intervalLabel : null,
+          price,
           currency: region.currency,
           locale: region.locale,
           regionCode: region.code,

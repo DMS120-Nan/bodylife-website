@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { formatPrice } from "../lib/regions";
+import { formatPrice, formatSubscriptionPrice } from "../lib/regions";
 import { AddToCartButton } from "./AddToCartButton";
 import { CertificationBadges } from "./CertificationBadges";
 import { ClinicalCredibilitySection } from "./ClinicalCredibilitySection";
@@ -21,7 +21,15 @@ export function ProductPage({ product, region }) {
   const variants = product.sizes?.length ? product.sizes : ["Default"];
   const [selectedVariant, setSelectedVariant] = useState(variants[0]);
   const [quantity, setQuantity] = useState(1);
+  const [purchaseMode, setPurchaseMode] = useState("onetime");
   const selectedPrice = formatPrice(product, region, selectedVariant);
+  const subscriptionPrice = formatSubscriptionPrice(product, region, selectedVariant);
+  const subscription = region.subscription;
+  const subscriptionPercent = subscription?.discount
+    ? Math.round(subscription.discount * 100)
+    : 0;
+  const displayPrice = purchaseMode === "subscription" ? subscriptionPrice : selectedPrice;
+  const isSubscription = purchaseMode === "subscription";
 
   return (
     <>
@@ -54,7 +62,17 @@ export function ProductPage({ product, region }) {
           <p className="product-benefit-headline">
             {region.pdp.headlinePrefix}
           </p>
-          <p className="product-price">{selectedPrice}</p>
+          <p className="product-price">
+            {isSubscription ? (
+              <>
+                <span className="product-price-strike">{selectedPrice}</span>
+                <span className="product-price-current">{subscriptionPrice}</span>
+                <span className="product-price-tag">Subscriber</span>
+              </>
+            ) : (
+              displayPrice
+            )}
+          </p>
           <p className="product-description">{product.description}</p>
 
           {product.keyBenefits ? (
@@ -64,6 +82,49 @@ export function ProductPage({ product, region }) {
               ))}
             </ul>
           ) : null}
+
+          {subscription ? (
+            <fieldset className="purchase-mode" aria-label="Purchase option">
+              <legend className="sr-only">Purchase option</legend>
+              <label className={`purchase-mode-option ${purchaseMode === "onetime" ? "is-active" : ""}`}>
+                <input
+                  type="radio"
+                  name="purchase-mode"
+                  value="onetime"
+                  checked={purchaseMode === "onetime"}
+                  onChange={() => setPurchaseMode("onetime")}
+                />
+                <span className="purchase-mode-title">One time</span>
+                <span className="purchase-mode-meta">{selectedPrice}</span>
+              </label>
+              <label className={`purchase-mode-option ${purchaseMode === "subscription" ? "is-active" : ""}`}>
+                <input
+                  type="radio"
+                  name="purchase-mode"
+                  value="subscription"
+                  checked={purchaseMode === "subscription"}
+                  onChange={() => setPurchaseMode("subscription")}
+                />
+                <span className="purchase-mode-badge">Save {subscriptionPercent}%</span>
+                <span className="purchase-mode-title">
+                  Subscribe
+                  <span className="purchase-mode-interval"> · {subscription.intervalLabel}</span>
+                </span>
+                <span className="purchase-mode-meta">
+                  <span className="purchase-mode-strike">{selectedPrice}</span>
+                  {subscriptionPrice}
+                </span>
+              </label>
+              {isSubscription && subscription.perks ? (
+                <ul className="purchase-mode-perks" aria-label="Subscription perks">
+                  {subscription.perks.map((perk) => (
+                    <li key={perk}>{perk}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </fieldset>
+          ) : null}
+
           <div className="option-row">
             <span>Size</span>
             <div className="size-list">
@@ -102,6 +163,7 @@ export function ProductPage({ product, region }) {
             </div>
           </div>
           <AddToCartButton
+            mode={purchaseMode}
             product={product}
             region={region}
             variant={selectedVariant}
@@ -198,10 +260,11 @@ export function ProductPage({ product, region }) {
       <div className="mobile-cart-bar">
         <div>
           <span>{product.name}</span>
-          <strong>{selectedPrice}</strong>
+          <strong>{displayPrice}</strong>
         </div>
         <AddToCartButton
           className="primary-button mobile-cart-button"
+          mode={purchaseMode}
           product={product}
           region={region}
           variant={selectedVariant}
