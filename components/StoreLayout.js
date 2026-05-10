@@ -43,7 +43,7 @@ export function StoreLayout({ children, region }) {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Bodylife. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Bodylife. All rights reserved.</p>
         </div>
       </footer>
     </CartProvider>

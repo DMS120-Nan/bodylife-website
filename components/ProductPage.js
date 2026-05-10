@@ -42,11 +42,6 @@ export function ProductPage({ product, region }) {
             ) : null}
             <span>{product.category}</span>
           </div>
-          <div className="product-thumbnail-row" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
         </div>
         <div className="product-detail-content">
           <Link className="back-link" href={`/${region.code}/products`}>
@@ -107,11 +102,11 @@ export function ProductPage({ product, region }) {
           <div className="product-audience-tags">
             <p className="product-audience-title">Suitable for</p>
             <div className="product-audience-list">
-              <span className="product-audience-tag">✓ Sensitive skin</span>
-              <span className="product-audience-tag">✓ Pregnancy-safe</span>
-              <span className="product-audience-tag">✓ All ages</span>
-              <span className="product-audience-tag">✓ Face & body</span>
-              <span className="product-audience-tag">✓ Eczema & rosacea</span>
+              <span className="product-audience-tag">Sensitive skin</span>
+              <span className="product-audience-tag">Pregnancy-safe</span>
+              <span className="product-audience-tag">All ages</span>
+              <span className="product-audience-tag">Face & body</span>
+              <span className="product-audience-tag">Eczema & rosacea</span>
             </div>
           </div>
           <CertificationBadges />

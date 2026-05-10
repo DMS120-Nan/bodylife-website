@@ -62,14 +62,24 @@ export function CartDrawer({ region, shopifyReady }) {
   }
 
   return (
-    <aside className={`cart-drawer ${isOpen ? "is-open" : ""}`} aria-hidden={!isOpen}>
+    <>
+      <button
+        type="button"
+        aria-label="Close cart"
+        tabIndex={isOpen ? 0 : -1}
+        className={`cart-backdrop ${isOpen ? "is-open" : ""}`}
+        onClick={closeCart}
+      />
+      <aside className={`cart-drawer ${isOpen ? "is-open" : ""}`} aria-hidden={!isOpen}>
       <div className="cart-drawer-header">
         <div>
           <p className="eyebrow">{region.label}</p>
           <h2>Cart</h2>
         </div>
-        <button className="icon-button" type="button" onClick={closeCart}>
-          Close
+        <button className="icon-button cart-close" type="button" aria-label="Close cart" onClick={closeCart}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <path d="M6 6L18 18M18 6L6 18" />
+          </svg>
         </button>
       </div>
 
@@ -132,5 +142,6 @@ export function CartDrawer({ region, shopifyReady }) {
         {checkoutError ? <p className="checkout-error">{checkoutError}</p> : null}
       </div>
     </aside>
+    </>
   );
 }
