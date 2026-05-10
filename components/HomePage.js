@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AudienceSection } from "./AudienceSection";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { BrandSignatureSection } from "./BrandSignatureSection";
+import { BundleHighlight } from "./BundleHighlight";
 import { CertificationBadges } from "./CertificationBadges";
 import { ClinicalCredibilitySection } from "./ClinicalCredibilitySection";
 import { ClinicalProofSection } from "./ClinicalProofSection";
@@ -122,6 +123,8 @@ export function HomePage({ region }) {
           </Link>
         </div>
       </section>
+
+      <BundleHighlight region={region} />
 
       <section className="review-section">
         <div className="review-content derm-content">

@@ -83,7 +83,24 @@ export function ProductPage({ product, region }) {
             </ul>
           ) : null}
 
-          {subscription ? (
+          {product.isBundle && product.bundleContents ? (
+            <div className="bundle-pdp-contents" aria-label="What's in the bundle">
+              <p className="eyebrow">In this bundle</p>
+              <ol>
+                {product.bundleContents.map((item, index) => (
+                  <li key={item.slug}>
+                    <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                    <div>
+                      <strong>{item.name}</strong>
+                      <span>{item.role}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ) : null}
+
+          {subscription && !product.isBundle ? (
             <fieldset className="purchase-mode" aria-label="Purchase option">
               <legend className="sr-only">Purchase option</legend>
               <label className={`purchase-mode-option ${purchaseMode === "onetime" ? "is-active" : ""}`}>

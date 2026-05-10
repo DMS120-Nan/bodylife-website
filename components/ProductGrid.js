@@ -4,8 +4,11 @@ import { formatPrice } from "../lib/regions";
 import { getProducts } from "../lib/shopify";
 import { ProductRating } from "./ProductRating";
 
-export async function ProductGrid({ region }) {
-  const products = await getProducts();
+export async function ProductGrid({ region, includeBundles = false }) {
+  const allProducts = await getProducts();
+  const products = includeBundles
+    ? allProducts
+    : allProducts.filter((product) => !product.isBundle);
 
   return (
     <div className="product-grid">
