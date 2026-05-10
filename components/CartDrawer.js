@@ -12,6 +12,14 @@ function formatCartPrice(item, quantity = 1) {
   }).format(item.price * quantity);
 }
 
+function formatRegionPrice(amount, region) {
+  return new Intl.NumberFormat(region.locale, {
+    style: "currency",
+    currency: region.currency,
+    maximumFractionDigits: 0
+  }).format(amount);
+}
+
 export function CartDrawer({ region, shopifyReady }) {
   const [checkoutError, setCheckoutError] = useState("");
   const [isCheckingOut, setIsCheckingOut] = useState(false);
@@ -31,6 +39,13 @@ export function CartDrawer({ region, shopifyReady }) {
   );
   const isCartEmpty = visibleRegionItems.length === 0;
   const isCheckoutDisabled = isCartEmpty || !shopifyReady || isCheckingOut;
+
+  const freeShippingThreshold = region.shipping?.freeOver ?? 0;
+  const amountToFreeShipping = Math.max(0, freeShippingThreshold - subtotal);
+  const shippingProgress = freeShippingThreshold > 0
+    ? Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100))
+    : 0;
+  const hasFreeShipping = freeShippingThreshold > 0 && subtotal >= freeShippingThreshold;
 
   async function handleCheckout() {
     setCheckoutError("");
@@ -74,7 +89,7 @@ export function CartDrawer({ region, shopifyReady }) {
       <div className="cart-drawer-header">
         <div>
           <p className="eyebrow">{region.label}</p>
-          <h2>Cart</h2>
+          <h2>Your bag</h2>
         </div>
         <button className="icon-button cart-close" type="button" aria-label="Close cart" onClick={closeCart}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -82,6 +97,19 @@ export function CartDrawer({ region, shopifyReady }) {
           </svg>
         </button>
       </div>
+
+      {!isCartEmpty && freeShippingThreshold > 0 ? (
+        <div className="shipping-progress" aria-live="polite">
+          <p className="shipping-progress-label">
+            {hasFreeShipping
+              ? "You've unlocked free shipping."
+              : `${formatRegionPrice(amountToFreeShipping, region)} away from free shipping.`}
+          </p>
+          <div className="shipping-progress-bar" role="progressbar" aria-valuenow={shippingProgress} aria-valuemin={0} aria-valuemax={100}>
+            <div className="shipping-progress-fill" style={{ width: `${shippingProgress}%` }} />
+          </div>
+        </div>
+      ) : null}
 
       {visibleRegionItems.length === 0 ? (
         <div className="cart-empty">
@@ -151,6 +179,35 @@ export function CartDrawer({ region, shopifyReady }) {
           </p>
         ) : null}
         {checkoutError ? <p className="checkout-error">{checkoutError}</p> : null}
+        {!isCartEmpty ? (
+          <ul className="cart-trust-list" aria-label="Checkout trust signals">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="4" y="10" width="16" height="11" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+              Secure encrypted checkout
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M3 12a9 9 0 1 0 3-6.7" />
+                <path d="M3 4v5h5" />
+              </svg>
+              30-day no-questions returns
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M3 7h13l3 4v6h-3" />
+                <path d="M3 7v10h2" />
+                <circle cx="8" cy="17" r="2" />
+                <circle cx="17" cy="17" r="2" />
+              </svg>
+              {region.shipping?.delivery
+                ? `Delivery in ${region.shipping.delivery}`
+                : "Fast regional shipping"}
+            </li>
+          </ul>
+        ) : null}
       </div>
     </aside>
     </>

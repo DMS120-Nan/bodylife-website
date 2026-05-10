@@ -32,9 +32,16 @@ export function Navbar({ region }) {
           </Link>
         ))}
       </div>
-      <button className="cart-toggle" type="button" onClick={openCart}>
-        Cart
-        <span>{visibleItemCount}</span>
+      <button
+        className="cart-toggle"
+        type="button"
+        onClick={openCart}
+        aria-label={`Open cart, ${visibleItemCount} ${visibleItemCount === 1 ? "item" : "items"}`}
+      >
+        Bag
+        <span key={visibleItemCount} className="cart-toggle-count">
+          {visibleItemCount}
+        </span>
       </button>
     </header>
   );
