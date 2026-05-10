@@ -9,7 +9,7 @@ export function StoreLayout({ children, region }) {
   return (
     <CartProvider region={region} shopifyReady={shopifyReady}>
       <Navbar region={region} />
-      <main>{children}</main>
+      <main id="main">{children}</main>
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-col">

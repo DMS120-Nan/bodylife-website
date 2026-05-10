@@ -74,7 +74,7 @@ export function LandingPage({ product, region }) {
   const productImage = product.images?.[0];
 
   return (
-    <main className="lp-page">
+    <main id="main" className="lp-page">
       <section className="lp-hero">
         <div className="lp-hero-inner">
           <div className="lp-hero-copy">

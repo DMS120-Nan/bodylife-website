@@ -1,6 +1,14 @@
 import "./globals.css";
+import { Inter } from "next/font/google";
 import { TrackingProvider } from "../components/TrackingProvider";
 import { getBaseUrl, siteName } from "../lib/seo";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata = {
   metadataBase: new URL(getBaseUrl()),
@@ -28,8 +36,9 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>
+        <a className="skip-to-content" href="#main">Skip to content</a>
         <TrackingProvider>{children}</TrackingProvider>
       </body>
     </html>
