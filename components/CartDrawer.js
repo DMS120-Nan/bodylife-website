@@ -134,15 +134,24 @@ export function CartDrawer({ region, shopifyReady }) {
                 <p>{formatCartPrice(item)}</p>
               </div>
               <div className="quantity-control">
-                <button type="button" onClick={() => decreaseItem(item.id)}>
-                  -
+                <button
+                  aria-label={`Decrease quantity of ${item.name}`}
+                  type="button"
+                  onClick={() => decreaseItem(item.id)}
+                >
+                  <span aria-hidden="true">−</span>
                 </button>
-                <span>{item.quantity}</span>
-                <button type="button" onClick={() => increaseItem(item.id)}>
-                  +
+                <span aria-live="polite">{item.quantity}</span>
+                <button
+                  aria-label={`Increase quantity of ${item.name}`}
+                  type="button"
+                  onClick={() => increaseItem(item.id)}
+                >
+                  <span aria-hidden="true">+</span>
                 </button>
               </div>
               <button
+                aria-label={`Remove ${item.name} from cart`}
                 className="remove-button"
                 type="button"
                 onClick={() => removeItem(item.id)}

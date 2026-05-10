@@ -1469,6 +1469,49 @@ html {
   padding-top: 56px;
 }
 
+.reviews-section-heading {
+  align-items: end;
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 700px) {
+  .reviews-section-heading {
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+  }
+}
+
+.reviews-aggregate {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+.reviews-aggregate-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.reviews-aggregate-meta {
+  display: grid;
+  gap: 2px;
+}
+
+.reviews-aggregate-meta strong {
+  color: var(--ink);
+  font-feature-settings: "tnum";
+  font-size: 1.04rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.reviews-aggregate-meta span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  letter-spacing: 0.005em;
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

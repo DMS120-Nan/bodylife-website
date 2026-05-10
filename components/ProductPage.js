@@ -84,18 +84,20 @@ export function ProductPage({ product, region }) {
             <span>Quantity</span>
             <div className="quantity-control">
               <button
+                aria-label="Decrease quantity"
                 type="button"
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                 disabled={quantity <= 1}
               >
-                -
+                <span aria-hidden="true">−</span>
               </button>
-              <span>{quantity}</span>
+              <span aria-live="polite">{quantity}</span>
               <button
+                aria-label="Increase quantity"
                 type="button"
                 onClick={() => setQuantity((q) => q + 1)}
               >
-                +
+                <span aria-hidden="true">+</span>
               </button>
             </div>
           </div>

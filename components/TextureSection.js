@@ -29,8 +29,8 @@ export function TextureSection() {
           />
         </div>
         <div className="texture-copy">
-          <p className="eyebrow">TEXTURE &amp; FEEL</p>
-          <h2>Lightweight texture for daily skin support.</h2>
+          <p className="eyebrow">Texture &amp; feel</p>
+          <h2>A texture you can actually live with.</h2>
           <div className="texture-points">
             {texturePoints.map((point) => (
               <article key={point.title}>

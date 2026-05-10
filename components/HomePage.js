@@ -97,7 +97,7 @@ export function HomePage({ region }) {
       <section className="section benefit-section">
         <div className="section-heading">
           <p className="eyebrow">Daily foundation</p>
-          <h2>Simple care for the skin barrier.</h2>
+          <h2>The kind of care your skin can keep up with.</h2>
         </div>
         <div className="benefit-grid">
           {region.home.benefits.map((benefit) => (
@@ -112,8 +112,8 @@ export function HomePage({ region }) {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Featured products</p>
-          <h2>Focused care for daily use.</h2>
+          <p className="eyebrow">The line</p>
+          <h2>A small line, made on purpose.</h2>
         </div>
         <ProductGrid region={region} />
         <div className="section-cta">
@@ -175,7 +175,7 @@ export function HomePage({ region }) {
       <section className="section ba-section">
         <div className="section-heading">
           <p className="eyebrow">Real results</p>
-          <h2>See the difference.</h2>
+          <h2>Four weeks. Real skin.</h2>
         </div>
         <BeforeAfterSlider />
       </section>

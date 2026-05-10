@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAggregateRating } from "./ProductRating";
 
 function StarIcon() {
   return (
@@ -13,11 +14,30 @@ function getStars(rating) {
 }
 
 export function ReviewsSection({ region }) {
+  const { average, count } = getAggregateRating(region.pdp.reviews);
+
   return (
     <section className="section reviews-section">
-      <div className="section-heading">
-        <p className="eyebrow">Reviews</p>
-        <h2>What customers are saying.</h2>
+      <div className="section-heading reviews-section-heading">
+        <div>
+          <p className="eyebrow">Reviews</p>
+          <h2>What customers are saying.</h2>
+        </div>
+        {count > 0 ? (
+          <div className="reviews-aggregate" aria-label={`Average rating ${average} out of 5 from ${count} reviews`}>
+            <div className="reviews-aggregate-stars" aria-hidden="true">
+              <StarIcon />
+              <StarIcon />
+              <StarIcon />
+              <StarIcon />
+              <StarIcon />
+            </div>
+            <div className="reviews-aggregate-meta">
+              <strong>{average} / 5</strong>
+              <span>from {count} verified reviews</span>
+            </div>
+          </div>
+        ) : null}
       </div>
       <div className="reviews-grid">
         {region.pdp.reviews.map((review) => (
