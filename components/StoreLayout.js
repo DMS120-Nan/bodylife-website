@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { hasShopifyConfig } from "../lib/shopify";
 import { CartProvider } from "./CartProvider";
+import { FirstVisitPopup } from "./FirstVisitPopup";
 import { Navbar } from "./Navbar";
 import { NewsletterForm } from "./NewsletterForm";
 
@@ -10,6 +11,7 @@ export function StoreLayout({ children, region }) {
   return (
     <CartProvider region={region} shopifyReady={shopifyReady}>
       <Navbar region={region} />
+      <FirstVisitPopup region={region} />
       <main id="main">{children}</main>
       <footer className="site-footer">
         <section className="footer-newsletter" aria-label="Newsletter signup">
