@@ -3,29 +3,36 @@
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
+import { useConsent } from "./ConsentProvider";
 import { trackPageView } from "../lib/tracking";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
-function PageViewTracker() {
+function PageViewTracker({ enabled }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    if (!enabled) return;
     const queryString = searchParams.toString();
     const url = queryString ? `${pathname}?${queryString}` : pathname;
 
     trackPageView(url);
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, enabled]);
 
   return null;
 }
 
 export function TrackingProvider({ children }) {
+  const { analyticsEnabled, marketingEnabled, isHydrated } = useConsent();
+
+  const loadAnalytics = isHydrated && analyticsEnabled && Boolean(GA_ID);
+  const loadMarketing = isHydrated && marketingEnabled && Boolean(META_PIXEL_ID);
+
   return (
     <>
-      {GA_ID ? (
+      {loadAnalytics ? (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -43,7 +50,7 @@ export function TrackingProvider({ children }) {
         </>
       ) : null}
 
-      {META_PIXEL_ID ? (
+      {loadMarketing ? (
         <Script id="meta-pixel-init" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
@@ -60,7 +67,7 @@ export function TrackingProvider({ children }) {
       ) : null}
 
       <Suspense fallback={null}>
-        <PageViewTracker />
+        <PageViewTracker enabled={loadAnalytics || loadMarketing} />
       </Suspense>
       {children}
     </>

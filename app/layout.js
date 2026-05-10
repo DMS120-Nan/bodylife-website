@@ -1,5 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { ConsentProvider } from "../components/ConsentProvider";
+import { CookieConsent } from "../components/CookieConsent";
 import { TrackingProvider } from "../components/TrackingProvider";
 import { getBaseUrl, siteName } from "../lib/seo";
 
@@ -39,7 +41,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.variable}>
       <body>
         <a className="skip-to-content" href="#main">Skip to content</a>
-        <TrackingProvider>{children}</TrackingProvider>
+        <ConsentProvider>
+          <TrackingProvider>{children}</TrackingProvider>
+          <CookieConsent />
+        </ConsentProvider>
       </body>
     </html>
   );

@@ -53,6 +53,8 @@ export function StoreLayout({ children, region }) {
               <Link href={`/${region.code}/contact`}>Contact</Link>
               <Link href={`/${region.code}/shipping`}>Shipping & returns</Link>
               <Link href={`/${region.code}/about`}>About Bodylife</Link>
+              <Link href={`/${region.code}/privacy`}>Privacy</Link>
+              <Link href={`/${region.code}/terms`}>Terms</Link>
             </nav>
           </div>
           <div className="footer-col">
