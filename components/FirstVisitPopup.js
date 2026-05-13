@@ -135,10 +135,10 @@ export function FirstVisitPopup({ region }) {
         {status === "success" ? (
           <div className="popup-content">
             <p className="eyebrow">Welcome in</p>
-            <h2 id="popup-title">Look out for the letter.</h2>
+            <h2 id="popup-title">Check your inbox.</h2>
             <p className="popup-lead">
-              We&apos;ll send your 10% off code shortly. Quiet writing only —
-              we don&apos;t do noise.
+              Your 10% off code is on the way. We send one letter a month
+              and you can unsubscribe in a click.
             </p>
             <button className="primary-button popup-cta" onClick={dismiss} type="button">
               Continue browsing
@@ -146,12 +146,12 @@ export function FirstVisitPopup({ region }) {
           </div>
         ) : (
           <div className="popup-content">
-            <p className="eyebrow">A small invitation</p>
-            <h2 id="popup-title">10% off, and a quiet letter every month.</h2>
+            <p className="eyebrow">10% off your first order</p>
+            <h2 id="popup-title">Drop your email. We&apos;ll send the code.</h2>
             <p className="popup-lead">
-              We write one short note a month — skin science we&apos;re reading,
-              routine ideas, and the occasional early access. Subscribe and we&apos;ll
-              send 10% off your first order.
+              You get 10% off your first order plus one short letter a
+              month: skin science we are reading, routine updates, and
+              early access to new formulas.
             </p>
             <form className="popup-form" onSubmit={handleSubmit} noValidate>
               <label className="sr-only" htmlFor="popup-email">

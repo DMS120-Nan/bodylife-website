@@ -1,7 +1,7 @@
 const whyThisWorksItems = [
-  "Lightweight gel structure absorbs quickly",
-  "Designed to reduce surface residue",
-  "Balanced formula to support skin comfort"
+  "The gel sits like water and absorbs in seconds.",
+  "No silicones to balloon on the skin and ball up.",
+  "Glycerin and panthenol pull moisture in and hold it."
 ];
 
 export function WhyThisWorksSection() {

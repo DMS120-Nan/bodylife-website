@@ -1,8 +1,8 @@
 const trustBadges = [
-  "Gentle daily use",
-  "Barrier support",
-  "Fast shipping",
-  "Easy returns"
+  "Sensitive-skin tested",
+  "Free shipping over $40",
+  "30-day returns",
+  "Vegan, cruelty-free"
 ];
 
 export function InlineTrustLabels({ className = "" }) {

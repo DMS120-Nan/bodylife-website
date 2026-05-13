@@ -112,7 +112,7 @@ export function LeadForm({ region }) {
         {status === "submitting" ? "Sending..." : "Send message"}
       </button>
       {status === "success" ? (
-        <p className="form-success">Thanks. We received your message.</p>
+        <p className="form-success">We got it. Expect a reply within one business day.</p>
       ) : null}
       {status === "error" ? <p className="form-error">{error}</p> : null}
     </form>

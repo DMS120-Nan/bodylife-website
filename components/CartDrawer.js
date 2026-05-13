@@ -119,9 +119,9 @@ export function CartDrawer({ region, shopifyReady }) {
               <path d="M12 9V7a4 4 0 0 1 8 0v2" />
             </svg>
           </div>
-          <p className="cart-empty-title">Your cart is empty.</p>
+          <p className="cart-empty-title">Your bag is empty.</p>
           <p className="cart-empty-lead">
-            Add a product and it will show up here.
+            Pick a product and it lands here.
           </p>
         </div>
       ) : (

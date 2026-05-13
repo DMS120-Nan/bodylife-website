@@ -5,10 +5,10 @@ export default function NotFound() {
     <section className="not-found-page">
       <div className="not-found-inner">
         <p className="not-found-eyebrow">404</p>
-        <h1>This page slipped past us.</h1>
+        <h1>We can&apos;t find that page.</h1>
         <p className="not-found-lead">
-          The page you are looking for may have moved, been renamed, or
-          isn&apos;t available in this region.
+          The link may have changed, or the page might not exist in this
+          region. Try one of these.
         </p>
         <div className="not-found-actions">
           <Link className="primary-button" href="/us">

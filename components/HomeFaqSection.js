@@ -1,28 +1,28 @@
 const homeFaqs = [
   {
-    question: "Is Bodylife actually safe for sensitive skin?",
+    question: "Is it safe for sensitive skin?",
     answer:
-      "Yes. We design every formula with reactive, sensitive skin in mind first. We're fragrance-free, dye-free, dermatology-informed, and tested with people who flush, react, or sting easily."
+      "Yes. Sensitive skin is the bar we design to first. Every formula is fragrance-free, dye-free, and runs through a 4-week patch and use study with people who flush, sting, and react before we ship it."
   },
   {
     question: "Can I use this during pregnancy?",
     answer:
-      "All current Bodylife formulas are made without retinoids, salicylic acid, hydroquinone, or essential oils — so they fit comfortably into a pregnancy or breastfeeding routine. As always, run a sensitivity check first if your skin has changed."
+      "All three formulas skip retinoids, salicylic acid, hydroquinone, and essential oils. They fit into a pregnancy or breastfeeding routine. Run a patch test first if your skin has shifted with hormones."
   },
   {
     question: "How long until I see something?",
     answer:
-      "Comfort comes quickly — most people feel calmer, more hydrated skin within the first week. Smoother surface and more even tone usually take 4 weeks of consistent daily use, in line with the natural skin renewal cycle."
+      "You feel comfort first. Most people notice calmer, more hydrated skin in the first week. Smoother surface and more even tone usually land at week four, which matches the natural skin renewal cycle."
   },
   {
-    question: "Do these layer with my retinol or actives?",
+    question: "Does it layer with my retinol or actives?",
     answer:
-      "Yes — the routine is intentionally gentle. We recommend Bodylife in the morning and evening as your hydration / barrier base, and adding actives (like retinol) on the nights you choose, after your serum, before the cream."
+      "Yes. Use Bodylife morning and evening as your hydration and barrier base. Add your retinol or acid on the nights you choose, after the serum and before the cream."
   },
   {
     question: "What if it doesn't work for me?",
     answer:
-      "Email us within 30 days of delivery and we'll refund you, no questions asked. We'd rather make it right than have skincare you can't use."
+      "Email us within 30 days of delivery and we refund you. No reason needed. We would rather take it back than have a jar you can't use sitting on your shelf."
   }
 ];
 
@@ -31,7 +31,7 @@ export function HomeFaqSection() {
     <section className="section home-faq-section" aria-label="Frequently asked questions">
       <div className="section-heading">
         <p className="eyebrow">Quick answers</p>
-        <h2>Things people usually ask first.</h2>
+        <h2>The questions we get most.</h2>
       </div>
       <div className="home-faq-list">
         {homeFaqs.map((faq, index) => (

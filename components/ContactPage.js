@@ -5,10 +5,11 @@ export function ContactPage({ region }) {
     <section className="contact-page">
       <div>
         <p className="eyebrow">{region.label}</p>
-        <h1>Contact Bodylife</h1>
+        <h1>Get in touch.</h1>
         <p>
-          Our regional team can help with product questions, sizing, orders, and
-          support.
+          A real person reads every message. We answer product questions,
+          help with orders and returns, and pass anything formula-related
+          straight to our chemists.
         </p>
       </div>
       <LeadForm region={region} />

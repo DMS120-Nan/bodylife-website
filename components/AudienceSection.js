@@ -3,27 +3,27 @@ import Image from "next/image";
 const audiences = [
   {
     title: "Sensitive Skin",
-    description: "Relief for redness, burning, tightness and irritation.",
+    description: "Calms redness, burning, and that tight feeling after cleansing.",
     image: "/images/audience-sensitive.png",
   },
   {
-    title: "Expecting Mothers",
-    description: "Hormone-safe care for changing skin during pregnancy.",
+    title: "Pregnancy & Postpartum",
+    description: "No retinoids, salicylic acid, or essential oils. Safe through every trimester.",
     image: "/images/audience-pregnancy.png",
   },
   {
     title: "Mature Skin",
-    description: "Fragrance-free, no dyes. Soothes dryness and itch.",
+    description: "Fragrance-free, dye-free. Comforts dryness and the daily itch of thinner skin.",
     image: "/images/audience-mature.png",
   },
   {
-    title: "Specialized Body Care",
-    description: "Gentle, non-irritating care for underarms, intimate areas, knees and feet. Clinically tested.",
+    title: "Body & Specialty",
+    description: "Use it on underarms, intimate skin, knees, and feet. We tested all of it.",
     image: "/images/audience-body.png",
   },
   {
-    title: "Special Skin Conditions",
-    description: "Gentle support for eczema, rosacea and dermatitis-prone skin.",
+    title: "Eczema & Rosacea",
+    description: "Supports flare-prone skin alongside your derm-prescribed routine.",
     image: "/images/audience-skin-conditions.png",
   },
 ];

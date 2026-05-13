@@ -1,26 +1,26 @@
 const trustItems = [
   {
     title: "Dermatologist Recommended",
-    description: "Informed by skin barrier care.",
+    description: "We work with derms who treat sensitive skin.",
     icon: "doctor"
   },
   {
     title: "Safe for Sensitive Skin",
-    description: "Made for gentle daily use.",
+    description: "Tested with people who flush and react.",
     icon: "leaf"
   },
   {
     title: "Clinically Tested",
-    description: "Tested with daily routines in mind.",
+    description: "Each formula passes a 4-week use study.",
     icon: "flask"
   },
   {
-    title: "Designed for Long-Term Use",
-    description: "Created for consistent care over time.",
+    title: "Built for Daily Use",
+    description: "Light enough to use every morning.",
     icon: "calendar"
   },
   {
-    title: "Vegan Friendly",
+    title: "Vegan",
     description: "No animal-derived ingredients.",
     icon: "sprout"
   },
@@ -30,8 +30,8 @@ const trustItems = [
     icon: "bunny"
   },
   {
-    title: "Naturally Sourced Ingredients",
-    description: "Selected with purpose.",
+    title: "Naturally Sourced",
+    description: "Plant-derived where the molecule allows.",
     icon: "branch"
   }
 ];

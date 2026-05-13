@@ -65,7 +65,7 @@ export function NewsletterForm({ region }) {
       </div>
       {status === "success" ? (
         <p className="newsletter-message newsletter-message-success">
-          Thank you. Look out for our next note.
+          You&apos;re in. The next letter goes out at the end of the month.
         </p>
       ) : null}
       {status === "error" ? (

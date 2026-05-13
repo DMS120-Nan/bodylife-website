@@ -11,14 +11,13 @@ export default function GlobalError({ error, reset }) {
   return (
     <section className="not-found-page">
       <div className="not-found-inner">
-        <p className="not-found-eyebrow">Something went wrong</p>
-        <h1>We couldn&apos;t load this page.</h1>
+        <p className="not-found-eyebrow">Something broke</p>
+        <h1>This page failed to load.</h1>
         <p className="not-found-lead">
-          Try refreshing — and if it keeps happening, email us at
-          {" "}
+          Try again. If it keeps happening, email{" "}
           <a href="mailto:support@bodylifeofficial.com">support@bodylifeofficial.com</a>
           {" "}
-          and we&apos;ll fix it.
+          and we will fix it.
         </p>
         <div className="not-found-actions">
           <button className="primary-button" onClick={() => reset()} type="button">

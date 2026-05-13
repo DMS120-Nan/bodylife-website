@@ -27,10 +27,10 @@ export function CookieConsent() {
         {showCustomize ? (
           <div className="cookie-consent-customize">
             <p className="eyebrow">Cookie preferences</p>
-            <h2 id="cookie-consent-title">Choose what you&apos;re comfortable with.</h2>
+            <h2 id="cookie-consent-title">Pick what you want to allow.</h2>
             <p className="cookie-consent-lead">
-              We use a small number of cookies to keep the site working and to
-              learn what&apos;s helpful for you. You can change these later in our{" "}
+              We use a short list of cookies to keep the site working and to
+              learn what is helpful. Full breakdown lives in our{" "}
               <Link href="/us/privacy">Privacy Policy</Link>.
             </p>
             <ul className="cookie-consent-options">
@@ -39,7 +39,7 @@ export function CookieConsent() {
                   <input checked disabled readOnly type="checkbox" />
                   <span>
                     <strong>Necessary</strong>
-                    <span>Cart, checkout, region, and language preferences. Always on.</span>
+                    <span>Cart, checkout, region, and language. Always on.</span>
                   </span>
                 </label>
               </li>
@@ -52,7 +52,7 @@ export function CookieConsent() {
                   />
                   <span>
                     <strong>Analytics</strong>
-                    <span>Anonymous usage data so we can improve what isn&apos;t working.</span>
+                    <span>Anonymous usage data so we can fix what is not working.</span>
                   </span>
                 </label>
               </li>
@@ -65,7 +65,7 @@ export function CookieConsent() {
                   />
                   <span>
                     <strong>Marketing</strong>
-                    <span>Helps us reach more people who&apos;d benefit from gentle skincare.</span>
+                    <span>Lets us reach more people who would use this routine.</span>
                   </span>
                 </label>
               </li>
@@ -82,10 +82,11 @@ export function CookieConsent() {
         ) : (
           <div className="cookie-consent-default">
             <div>
-              <p className="eyebrow">A small note</p>
+              <p className="eyebrow">Cookies</p>
               <p className="cookie-consent-lead" id="cookie-consent-title">
-                We use cookies to remember your cart and learn what&apos;s helpful.
-                Read our <Link href="/us/privacy">Privacy Policy</Link>.
+                We use cookies to keep your cart, remember your region, and
+                see what works. Details in our{" "}
+                <Link href="/us/privacy">Privacy Policy</Link>.
               </p>
             </div>
             <div className="cookie-consent-actions">

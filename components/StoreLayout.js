@@ -18,10 +18,10 @@ export function StoreLayout({ children, region }) {
           <div className="footer-newsletter-inner">
             <div className="footer-newsletter-copy">
               <p className="eyebrow">Stay close</p>
-              <h2>Quiet notes from our routine to yours.</h2>
+              <h2>One letter a month, when we have something worth saying.</h2>
               <p className="footer-newsletter-lead">
-                One short letter a month. Skin science we&apos;re reading,
-                routine ideas, and the occasional early access. No noise.
+                Skin science we are reading, the occasional routine update,
+                and early access to new formulas. Unsubscribe in one click.
               </p>
             </div>
             <NewsletterForm region={region} />

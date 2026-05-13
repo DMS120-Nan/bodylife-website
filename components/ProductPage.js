@@ -191,7 +191,7 @@ export function ProductPage({ product, region }) {
             />
           </div>
           <p className="product-cta-reassurance">
-            Gentle enough for daily use. Lightweight, no heavy residue.
+            Free shipping over {new Intl.NumberFormat(region.locale, { style: "currency", currency: region.currency, maximumFractionDigits: 0 }).format(region.shipping?.freeOver || 0)}. 30-day refund, no reason needed.
           </p>
           <TrustBadges />
           <div className="product-audience-tags">

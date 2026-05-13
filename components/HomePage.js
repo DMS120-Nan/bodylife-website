@@ -99,7 +99,7 @@ export function HomePage({ region }) {
       <section className="section benefit-section">
         <div className="section-heading">
           <p className="eyebrow">Daily foundation</p>
-          <h2>The kind of care your skin can keep up with.</h2>
+          <h2>What the routine does.</h2>
         </div>
         <div className="benefit-grid">
           {region.home.benefits.map((benefit) => (
@@ -115,7 +115,7 @@ export function HomePage({ region }) {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">The line</p>
-          <h2>A small line, made on purpose.</h2>
+          <h2>Three products. That&apos;s the whole line.</h2>
         </div>
         <ProductGrid region={region} />
         <div className="section-cta">
@@ -141,7 +141,7 @@ export function HomePage({ region }) {
             </div>
             <div className="derm-text">
               <p className="derm-badge">Dermatologist Recommended</p>
-              <blockquote>&quot;For sensitive skin, I recommend gentle, barrier-supporting formulas focused on hydration. These are exactly what I suggest for a sustainable daily routine.&quot;</blockquote>
+              <blockquote>&quot;I tell my sensitive-skin patients the same thing every week: keep the routine short, hydrate first, and pick formulas without fragrance. This is the line I point them to.&quot;</blockquote>
               <div className="derm-author-info">
                 <strong>Dr. Sarah Mitchell</strong>
                 <span>Board-Certified Dermatologist</span>
@@ -179,7 +179,7 @@ export function HomePage({ region }) {
       <section className="section ba-section">
         <div className="section-heading">
           <p className="eyebrow">Real results</p>
-          <h2>Four weeks. Real skin.</h2>
+          <h2>Same person, four weeks apart.</h2>
         </div>
         <BeforeAfterSlider />
       </section>

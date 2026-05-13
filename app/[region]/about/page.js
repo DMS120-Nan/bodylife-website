@@ -24,24 +24,24 @@ export async function generateMetadata({ params }) {
 
 const principles = [
   {
-    title: "Calm before clever",
+    title: "Comfort first",
     description:
-      "Skincare should feel calm to use. Before it does anything else, a daily formula has to be comfortable on real skin, day after day."
+      "A daily formula has to feel good on the skin before anything else. If you wince when you put it on, you stop using it. We design around that."
   },
   {
-    title: "Few ingredients, used well",
+    title: "Short ingredient lists",
     description:
-      "Long ingredient lists are not a sign of effort. We pick the molecules that actually do something — and leave the rest out."
+      "A long INCI list signals effort, not results. We pick the molecules that do real work in barrier care and leave out the rest."
   },
   {
-    title: "Built for sensitive skin first",
+    title: "Sensitive skin sets the bar",
     description:
-      "If a formula works for sensitive, reactive skin, it tends to be kind to everyone. We start there, not the other way around."
+      "We test every formula with people who flush, sting, and react. If it passes for them, it works for everyone else too."
   },
   {
-    title: "Routines you can actually keep",
+    title: "Consistency over heroics",
     description:
-      "We design for consistency over heroics. A small routine you do every day will always beat a complicated one you abandon."
+      "A three-product routine you do every day will always beat the ten-step one you abandon by week three. We design for the long haul."
   }
 ];
 
@@ -53,20 +53,20 @@ export default async function AboutPage({ params }) {
     <article className="about-page">
       <section className="about-hero">
         <p className="eyebrow">Our story</p>
-        <h1>Skincare that earns its place in your morning.</h1>
+        <h1>We started Bodylife after our skin stopped agreeing with everything else.</h1>
         <p className="about-lead">
-          Bodylife started with a simple frustration: most skincare we tried
-          looked beautiful but felt heavy on the skin, irritated easily, or
-          asked us to follow a ten-step routine no one keeps up. So we made
-          the kind of products we actually wanted — gentle, lightweight,
-          dermatology-informed, and easy to repeat for years.
+          The shelves were full of beautiful jars that felt heavy, stung after
+          a few days, or asked for ten steps before bed. We wanted the
+          opposite: three light formulas, made with chemists who specialise in
+          sensitive skin, that you can keep using for years without thinking
+          about them.
         </p>
       </section>
 
       <section className="about-principles">
         <div className="about-principles-heading">
           <p className="eyebrow">How we make things</p>
-          <h2>Four quiet rules.</h2>
+          <h2>The four rules we work to.</h2>
         </div>
         <div className="about-principles-grid">
           {principles.map((principle, index) => (
@@ -83,12 +83,13 @@ export default async function AboutPage({ params }) {
 
       <section className="about-promise">
         <p className="eyebrow">Our promise</p>
-        <h2>Long-term skin comfort, formulated with care.</h2>
+        <h2>If a Bodylife product doesn&apos;t work for your skin, send it back.</h2>
         <p>
-          Every Bodylife formula is dermatology-informed, fragrance-free, and
-          tested for sensitive skin. We work with cosmetic chemists who
-          specialise in barrier care, and we keep our line small on purpose —
-          so we can stand behind every product we ship.
+          Every formula is fragrance-free, dermatology-informed, and tested
+          with sensitive-skin users for 4 weeks before we ship it. We keep the
+          line small so we can keep every product accountable. If yours
+          doesn&apos;t earn its spot, email us within 30 days and we&apos;ll
+          refund you.
         </p>
         <div className="about-actions">
           <Link className="primary-button" href={`/${region.code}/products`}>

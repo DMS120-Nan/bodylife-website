@@ -1,7 +1,7 @@
 const signatureLines = [
-  "Skincare should not be complicated.",
-  "Gentle formulas, grounded in science.",
-  "Designed for long-term skin health."
+  "Three products. One routine.",
+  "We pick molecules that do something.",
+  "The rest, we leave out."
 ];
 
 export function BrandSignatureSection() {

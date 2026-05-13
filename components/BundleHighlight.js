@@ -43,11 +43,11 @@ export async function BundleHighlight({ region }) {
         </div>
         <div className="bundle-highlight-copy">
           <p className="eyebrow">The complete routine</p>
-          <h2>The whole routine, made to live together.</h2>
+          <h2>Three formulas. One routine. 20% off.</h2>
           <p className="bundle-highlight-lead">
-            Three formulas designed to layer cleanly — gentle enough to use
-            together every morning and evening, without doubling up. The
-            simplest way to start a real, repeatable skin routine.
+            Serum, gel, cream. Layer them morning and evening, in that order,
+            and you have a full sensitive-skin routine in three steps. The
+            bundle saves you 20% over buying each one alone.
           </p>
           {bundle.bundleContents ? (
             <ol className="bundle-highlight-list">
