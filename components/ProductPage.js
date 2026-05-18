@@ -198,10 +198,10 @@ export function ProductPage({ product, region }) {
             <p className="product-audience-title">Suitable for</p>
             <div className="product-audience-list">
               <span className="product-audience-tag">Sensitive skin</span>
-              <span className="product-audience-tag">Pregnancy-safe</span>
+              <span className="product-audience-tag">Hormonal skin changes</span>
               <span className="product-audience-tag">All ages</span>
               <span className="product-audience-tag">Face & body</span>
-              <span className="product-audience-tag">Eczema & rosacea</span>
+              <span className="product-audience-tag">Skin that needs extra care</span>
             </div>
           </div>
           <CertificationBadges />

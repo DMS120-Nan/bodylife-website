@@ -2,12 +2,12 @@ const homeFaqs = [
   {
     question: "Is it safe for sensitive skin?",
     answer:
-      "Yes. Sensitive skin is the bar we design to first. Every formula is fragrance-free, dye-free, and runs through a 4-week patch and use study with people who flush, sting, and react before we ship it."
+      "Yes. Sensitive needs are the standard we design to first. Every formula is fragrance-free, dye-free, and runs through a 4-week patch and use study with people who have sensitive or reactive skin before we ship it."
   },
   {
     question: "Can I use this during pregnancy?",
     answer:
-      "All three formulas skip retinoids, salicylic acid, hydroquinone, and essential oils. They fit into a pregnancy or breastfeeding routine. Run a patch test first if your skin has shifted with hormones."
+      "All three formulas are free from retinoids, salicylic acid, hydroquinone, and essential oils. If you have any concerns during pregnancy or while breastfeeding, we always recommend checking with your healthcare provider first."
   },
   {
     question: "How long until I see something?",

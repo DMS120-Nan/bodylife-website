@@ -146,12 +146,12 @@ export function FirstVisitPopup({ region }) {
           </div>
         ) : (
           <div className="popup-content">
-            <p className="eyebrow">10% off your first order</p>
-            <h2 id="popup-title">Drop your email. We&apos;ll send the code.</h2>
+            <p className="eyebrow">Gentle care for sensitive needs</p>
+            <h2 id="popup-title">10% off your first order.</h2>
             <p className="popup-lead">
-              You get 10% off your first order plus one short letter a
-              month: skin science we are reading, routine updates, and
-              early access to new formulas.
+              Drop your email and we will send the code. Plus gentle care
+              tips for sensitive skin and early access to new Bodylife
+              formulas — once a month.
             </p>
             <form className="popup-form" onSubmit={handleSubmit} noValidate>
               <label className="sr-only" htmlFor="popup-email">

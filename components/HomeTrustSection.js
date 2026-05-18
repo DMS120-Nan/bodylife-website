@@ -1,7 +1,7 @@
 const trustItems = [
   {
     title: "Dermatologist Recommended",
-    description: "We work with derms who treat sensitive skin.",
+    description: "We design every formula around skin that needs extra care.",
     icon: "doctor"
   },
   {

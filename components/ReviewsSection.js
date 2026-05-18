@@ -21,7 +21,7 @@ export function ReviewsSection({ region }) {
       <div className="section-heading reviews-section-heading">
         <div>
           <p className="eyebrow">Reviews</p>
-          <h2>What customers are saying.</h2>
+          <h2>What people with sensitive needs are saying.</h2>
         </div>
         {count > 0 ? (
           <div className="reviews-aggregate" aria-label={`Average rating ${average} out of 5 from ${count} reviews`}>

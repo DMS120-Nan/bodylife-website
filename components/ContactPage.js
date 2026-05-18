@@ -8,8 +8,8 @@ export function ContactPage({ region }) {
         <h1>Get in touch.</h1>
         <p>
           A real person reads every message. We answer product questions,
-          help with orders and returns, and pass anything formula-related
-          straight to our chemists.
+          help with orders and returns, and pass any formula or care questions
+          directly to the team behind our products.
         </p>
       </div>
       <LeadForm region={region} />

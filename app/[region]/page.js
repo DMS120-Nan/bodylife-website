@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
   const { region: regionCode } = await params;
   const region = getValidatedRegion(regionCode);
   const path = `/${region.code}`;
-  const title = `${region.name} Daily Skincare`;
+  const title = `${region.name} — Gentle Personal Care`;
 
   return {
     title,

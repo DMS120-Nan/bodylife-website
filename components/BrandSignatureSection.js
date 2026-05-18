@@ -1,7 +1,7 @@
 const signatureLines = [
-  "Three products. One routine.",
-  "We pick molecules that do something.",
-  "The rest, we leave out."
+  "Gentle care for sensitive needs.",
+  "Clean formulas. Comfortable daily use.",
+  "For skin that deserves a softer approach."
 ];
 
 export function BrandSignatureSection() {

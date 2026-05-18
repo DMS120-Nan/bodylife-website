@@ -1,5 +1,5 @@
 const trustBadges = [
-  "Sensitive-skin tested",
+  "Sensitive-needs tested",
   "Free shipping over $40",
   "30-day returns",
   "Vegan, cruelty-free"

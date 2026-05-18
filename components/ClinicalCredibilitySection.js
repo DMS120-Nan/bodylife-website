@@ -3,12 +3,12 @@ export function ClinicalCredibilitySection() {
     <section className="clinical-section">
       <div className="clinical-inner">
         <div>
-          <p className="eyebrow">Skin science</p>
-          <h2>We work with dermatologists.</h2>
+          <p className="eyebrow">Comfort-focused formulas</p>
+          <h2>Built for skin that needs extra care.</h2>
         </div>
         <div className="clinical-lines">
-          <p>Our chemists specialise in barrier care.</p>
-          <p>We test every batch with sensitive-skin users before it ships.</p>
+          <p>Clean formulas, designed for sensitive needs and long-term daily use.</p>
+          <p>Every formula is tested with people who have reactive, delicate, or sensitive-prone skin.</p>
         </div>
       </div>
     </section>

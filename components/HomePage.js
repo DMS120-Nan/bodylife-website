@@ -58,19 +58,19 @@ export function HomePage({ region }) {
 
       <div className="trust-ticker">
         <div className="trust-ticker-track">
-          <span>Sensitive Skin Friendly</span>
+          <span>Gentle Care</span>
           <span>·</span>
-          <span>Pregnancy Safe</span>
+          <span>Sensitive Needs</span>
           <span>·</span>
-          <span>All Ages</span>
+          <span>Comfort-Care Formula</span>
           <span>·</span>
-          <span>Face & Body</span>
-          <span>·</span>
-          <span>Dermatologist Recommended</span>
+          <span>Skin That Needs Extra Care</span>
           <span>·</span>
           <span>Fragrance Free</span>
           <span>·</span>
-          <span>Clinically Tested</span>
+          <span>For Frequent Use</span>
+          <span>·</span>
+          <span>Long-Term Daily Care</span>
         </div>
       </div>
 
@@ -98,8 +98,8 @@ export function HomePage({ region }) {
 
       <section className="section benefit-section">
         <div className="section-heading">
-          <p className="eyebrow">Daily foundation</p>
-          <h2>What the routine does.</h2>
+          <p className="eyebrow">Daily comfort</p>
+          <h2>A gentler way to care for your body, every day.</h2>
         </div>
         <div className="benefit-grid">
           {region.home.benefits.map((benefit) => (
@@ -114,8 +114,8 @@ export function HomePage({ region }) {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">The line</p>
-          <h2>Three products. That&apos;s the whole line.</h2>
+          <p className="eyebrow">The routine</p>
+          <h2>Clean, comfort-focused care. Made for sensitive needs.</h2>
         </div>
         <ProductGrid region={region} />
         <div className="section-cta">
@@ -141,7 +141,7 @@ export function HomePage({ region }) {
             </div>
             <div className="derm-text">
               <p className="derm-badge">Dermatologist Recommended</p>
-              <blockquote>&quot;I tell my sensitive-skin patients the same thing every week: keep the routine short, hydrate first, and pick formulas without fragrance. This is the line I point them to.&quot;</blockquote>
+              <blockquote>&quot;I always tell people with sensitive or reactive skin the same thing: keep it simple, keep it gentle, and find formulas you can stick with long-term. Bodylife checks all three.&quot;</blockquote>
               <div className="derm-author-info">
                 <strong>Dr. Sarah Mitchell</strong>
                 <span>Board-Certified Dermatologist</span>
@@ -156,13 +156,31 @@ export function HomePage({ region }) {
 
       <AudienceSection />
 
+      <section className="brand-positioning-section">
+        <div className="brand-positioning-inner">
+          <p className="brand-positioning-eyebrow">Who we are</p>
+          <h2 className="brand-positioning-headline">
+            Gentle care for sensitive needs.
+          </h2>
+          <p className="brand-positioning-body">
+            Bodylife creates clean, comfort-focused care for everyday skin, body, and hair routines — made for delicate areas, post-hair removal comfort, and skin or scalp that needs extra care.
+          </p>
+          <p className="brand-positioning-sub">
+            We are not about harsh formulas or aggressive results. Bodylife is about giving people a safer, softer, and more comfortable way to care for themselves — every day.
+          </p>
+          <Link className="brand-positioning-cta" href={`/${region.code}/about`}>
+            Our story
+          </Link>
+        </div>
+      </section>
+
       <section className="section result-section" id="results">
         <div className="result-copy">
-          <p className="eyebrow">Consistent care</p>
+          <p className="eyebrow">Long-term daily care</p>
           <h2>{region.home.resultTitle}</h2>
           <p>{region.home.resultDescription}</p>
           <Link className="primary-button" href={`/${region.code}/products`}>
-            Shop daily care
+            Explore the routine
           </Link>
         </div>
         <div className="result-comparison-image" aria-label="Skincare result comparison image">

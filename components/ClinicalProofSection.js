@@ -1,15 +1,15 @@
 const clinicalStats = [
   {
     value: "93%",
-    label: "noticed improved hydration"
+    label: "reported noticeably more comfortable skin"
   },
   {
-    value: "99.5%",
+    value: "99%",
     label: "sensitive skin reported no discomfort"
   },
   {
-    value: "90%",
-    label: "smoother skin texture"
+    value: "4 wk",
+    label: "comfort improvement observed in user study"
   },
   {
     value: "Clinically tested",
@@ -22,13 +22,13 @@ export function ClinicalProofSection() {
     <section className="clinical-proof-section">
       <div className="clinical-proof-inner">
         <div className="clinical-proof-heading">
-          <p className="eyebrow">Clinical proof</p>
+          <p className="eyebrow">Comfort-focused results</p>
           <h2>
-            Measured support
+            Gentle care,
             <br />
-            for daily skin
+            measured over
             <br />
-            health.
+            daily use.
           </h2>
         </div>
         <div className="clinical-proof-grid">

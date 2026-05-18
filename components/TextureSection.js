@@ -2,16 +2,16 @@ import Image from "next/image";
 
 const texturePoints = [
   {
-    title: "Light gel, no slip",
-    description: "Sits like water on the skin. Nothing sticky, nothing tacky once it goes in."
+    title: "Gentle on contact",
+    description: "Designed to feel comfortable the moment you apply it — nothing harsh, nothing heavy."
   },
   {
-    title: "Absorbs in seconds",
-    description: "You can press it in, count to ten, and layer SPF or makeup over it."
+    title: "Light, non-irritating",
+    description: "Nothing sticky, nothing that builds up. Comfortable enough for daily use on sensitive skin."
   },
   {
-    title: "Sensitive-skin first",
-    description: "We tested it with people who flush, sting, and react. It cleared their bar."
+    title: "Sensitive needs first",
+    description: "Every formula is tested with people who have sensitive or reactive skin before it ships."
   }
 ];
 
@@ -29,8 +29,8 @@ export function TextureSection() {
           />
         </div>
         <div className="texture-copy">
-          <p className="eyebrow">Texture &amp; feel</p>
-          <h2>The gel goes on like water.</h2>
+          <p className="eyebrow">Comfort &amp; feel</p>
+          <h2>Formulas that feel right from the first use.</h2>
           <div className="texture-points">
             {texturePoints.map((point) => (
               <article key={point.title}>

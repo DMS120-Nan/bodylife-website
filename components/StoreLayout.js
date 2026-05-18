@@ -17,11 +17,11 @@ export function StoreLayout({ children, region }) {
         <section className="footer-newsletter" aria-label="Newsletter signup">
           <div className="footer-newsletter-inner">
             <div className="footer-newsletter-copy">
-              <p className="eyebrow">Stay close</p>
-              <h2>One letter a month, when we have something worth saying.</h2>
+              <p className="eyebrow">Gentle updates</p>
+              <h2>Care tips and new formulas, when we have something worth sharing.</h2>
               <p className="footer-newsletter-lead">
-                Skin science we are reading, the occasional routine update,
-                and early access to new formulas. Unsubscribe in one click.
+                Comfort care advice, sensitive skin insights, and early access
+                to new Bodylife formulas. Unsubscribe in one click.
               </p>
             </div>
             <NewsletterForm region={region} />

@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   const path = `/${region.code}/about`;
   const title = "About Bodylife";
   const description =
-    "Bodylife makes lightweight, sensitive-skin friendly daily care — formulated by people who use it every day.";
+    "Bodylife is a gentle personal care brand for sensitive needs — clean, comfort-focused formulas for everyday skin, body, and hair routines.";
 
   return {
     title,
@@ -24,24 +24,24 @@ export async function generateMetadata({ params }) {
 
 const principles = [
   {
-    title: "Comfort first",
+    title: "Gentle by design",
     description:
-      "A daily formula has to feel good on the skin before anything else. If you wince when you put it on, you stop using it. We design around that."
+      "Every formula starts with one question: is this comfortable for someone with sensitive needs? Not just tolerable — genuinely comfortable, every day."
   },
   {
-    title: "Short ingredient lists",
+    title: "Clean and purposeful",
     description:
-      "A long INCI list signals effort, not results. We pick the molecules that do real work in barrier care and leave out the rest."
+      "We keep our ingredient lists short and clear. No complicated formulas, no unnecessary additions. Just what your skin actually needs."
   },
   {
-    title: "Sensitive skin sets the bar",
+    title: "Sensitive needs set the standard",
     description:
-      "We test every formula with people who flush, sting, and react. If it passes for them, it works for everyone else too."
+      "We test every formula with people who have reactive, delicate, or sensitive-prone skin. If it feels right for them, it works for everyone."
   },
   {
-    title: "Consistency over heroics",
+    title: "Built for the long term",
     description:
-      "A three-product routine you do every day will always beat the ten-step one you abandon by week three. We design for the long haul."
+      "Bodylife is not about dramatic results or one-time fixes. It is about daily comfort — a routine you feel good about keeping up with, for years."
   }
 ];
 
@@ -53,20 +53,21 @@ export default async function AboutPage({ params }) {
     <article className="about-page">
       <section className="about-hero">
         <p className="eyebrow">Our story</p>
-        <h1>We started Bodylife after our skin stopped agreeing with everything else.</h1>
+        <h1>Gentle care for sensitive needs — that is what Bodylife is for.</h1>
         <p className="about-lead">
-          The shelves were full of beautiful jars that felt heavy, stung after
-          a few days, or asked for ten steps before bed. We wanted the
-          opposite: three light formulas, made with chemists who specialise in
-          sensitive skin, that you can keep using for years without thinking
-          about them.
+          We created Bodylife for people who need more from their personal care:
+          more gentleness, more comfort, more confidence that what they are
+          using is actually right for their skin. Whether it is sensitive skin,
+          delicate areas, post-hair removal care, or a scalp that needs extra
+          attention — Bodylife is designed to feel safe, comfortable, and
+          genuinely suited to long-term daily use.
         </p>
       </section>
 
       <section className="about-principles">
         <div className="about-principles-heading">
-          <p className="eyebrow">How we make things</p>
-          <h2>The four rules we work to.</h2>
+          <p className="eyebrow">How we think about care</p>
+          <h2>The principles behind every Bodylife formula.</h2>
         </div>
         <div className="about-principles-grid">
           {principles.map((principle, index) => (
@@ -83,13 +84,12 @@ export default async function AboutPage({ params }) {
 
       <section className="about-promise">
         <p className="eyebrow">Our promise</p>
-        <h2>If a Bodylife product doesn&apos;t work for your skin, send it back.</h2>
+        <h2>If a Bodylife product does not feel right for your skin, send it back.</h2>
         <p>
-          Every formula is fragrance-free, dermatology-informed, and tested
-          with sensitive-skin users for 4 weeks before we ship it. We keep the
-          line small so we can keep every product accountable. If yours
-          doesn&apos;t earn its spot, email us within 30 days and we&apos;ll
-          refund you.
+          Every formula is fragrance-free, tested with people who have sensitive
+          or reactive skin, and designed for comfortable long-term use. We keep
+          the line focused so every product can be held to a high standard. If
+          yours does not feel right within 30 days, contact us and we will make it right.
         </p>
         <div className="about-actions">
           <Link className="primary-button" href={`/${region.code}/products`}>

@@ -3,16 +3,16 @@ import Link from "next/link";
 
 const problemItems = [
   {
-    title: "Heavy creams pool on the skin.",
-    detail: "You can feel them all morning. They show up in photos. They ball under makeup."
+    title: "Heavy formulas are hard to use every day.",
+    detail: "When care feels like too much, you stop. The routine that works is the one that feels comfortable enough to keep."
   },
   {
-    title: "Harsh formulas start the irritation cycle.",
-    detail: "Sting on Tuesday, red on Wednesday, breakout on Friday. You abandon by Sunday."
+    title: "Some formulas are too harsh for sensitive needs.",
+    detail: "For skin that needs extra care, the wrong formula can make things worse, not better."
   },
   {
-    title: "Ten-step routines don't survive a long week.",
-    detail: "Most people skip three steps by day five. The routine that works is the one you finish."
+    title: "Ten-step routines don't last.",
+    detail: "Most people stop by day five. A short, gentle routine you can stick with every day is always better."
   }
 ];
 
@@ -33,29 +33,29 @@ const clinicalStats = [
 
 const solutionPoints = [
   {
-    title: "Gel that sits like water.",
-    detail: "Absorbs in seconds. Nothing tacky once it goes in. Layers under SPF or makeup without pilling."
+    title: "Comfort-focused formulas.",
+    detail: "Every product is designed to feel gentle and comfortable — because daily care should never feel harsh."
   },
   {
-    title: "Sensitive skin sets the bar.",
-    detail: "We test every batch with people who flush and sting. If it passes for them, it works for the rest of us."
+    title: "Sensitive needs set the standard.",
+    detail: "We test every formula with people who have sensitive or reactive skin. If it feels right for them, it works for everyone."
   },
   {
-    title: "A routine you finish.",
-    detail: "Three steps in the morning. Three at night. Same routine for years, not weeks."
+    title: "A routine you can keep long-term.",
+    detail: "Gentle enough for daily use, every day, for years. That is what long-term comfort care looks like."
   }
 ];
 
 const trustItems = [
-  "Dermatologist recommended",
-  "Sensitive skin tested",
+  "Comfort-Care Formula",
+  "Sensitive needs tested",
   "Vegan, never tested on animals"
 ];
 
 const proofTrustLines = [
-  "Made with chemists who specialise in barrier care.",
-  "Tested with sensitive-skin users for 4 weeks before shipping.",
-  "Light enough for daily use. Strong enough that it earns its spot."
+  "Clean, comfort-focused formulas for sensitive needs.",
+  "Tested with people who have sensitive or reactive skin before shipping.",
+  "Gentle enough for daily use. Effective enough to stay in the routine."
 ];
 
 const proofQuotes = [
@@ -78,22 +78,22 @@ export function LandingPage({ product, region }) {
       <section className="lp-hero">
         <div className="lp-hero-inner">
           <div className="lp-hero-copy">
-            <p className="eyebrow">Daily skin comfort</p>
-            <h1>Most skincare feels heavy by lunch. Ours doesn&apos;t.</h1>
+            <p className="eyebrow">Gentle care for sensitive needs</p>
+            <h1>Care that stays comfortable all day.</h1>
             <p>
-              A gel that sits like water, made for sensitive skin and the
-              long routine you keep up with.
+              Clean, comfort-focused formulas made for sensitive skin and
+              the daily routine you can keep up with long-term.
             </p>
             <Link className="primary-button lp-button" href={productHref}>
               Shop Now
             </Link>
             <div className="lp-micro-trust">
-              <span>Sensitive skin tested</span>
-              <span>Absorbs in seconds</span>
-              <span>Dermatologist recommended</span>
+              <span>Sensitive needs tested</span>
+              <span>Comfort-Care Formula</span>
+              <span>For frequent daily use</span>
             </div>
             <p className="lp-social-signal">
-              In the morning and evening routine of sensitive-skin users worldwide.
+              A gentle daily routine trusted by people with sensitive skin and care needs.
             </p>
           </div>
           <div className="lp-hero-media">
@@ -125,7 +125,7 @@ export function LandingPage({ product, region }) {
       <section className="lp-problem">
         <div className="lp-problem-heading">
           <p className="eyebrow">The problem</p>
-          <h2>Why most skincare quietly fails you.</h2>
+          <h2>Why most care routines don&apos;t work for sensitive needs.</h2>
         </div>
         <div className="lp-problem-list">
           {problemItems.map((item) => (
@@ -157,10 +157,10 @@ export function LandingPage({ product, region }) {
       <section className="lp-solution">
         <div className="lp-section-copy">
           <p className="eyebrow">Solution</p>
-          <h2>Three formulas. One routine. Less to think about.</h2>
+          <h2>Clean, comfort-focused care. Made for sensitive needs.</h2>
           <p>
-            We make a serum, a gel, and a cream. You layer them in that
-            order morning and evening. That&apos;s the whole routine.
+            Gentle formulas you can use every day, morning and evening,
+            without worry. Designed for the long routine you actually keep.
           </p>
           <div className="lp-solution-points">
             {solutionPoints.map((point) => (
@@ -273,9 +273,9 @@ export function LandingPage({ product, region }) {
       </section>
 
       <section className="lp-final-cta">
-        <p className="eyebrow">Daily care, simplified</p>
-        <h2>Start the routine your skin keeps showing up for.</h2>
-        <p>Three formulas. Layer them morning and evening. That&apos;s it.</p>
+        <p className="eyebrow">Gentle care for sensitive needs</p>
+        <h2>A softer way to care for your skin, every day.</h2>
+        <p>Comfort-focused formulas for daily use. Gentle enough to keep up with long-term.</p>
         <Link className="primary-button lp-button" href={productHref}>
           Shop Now
         </Link>
@@ -286,9 +286,9 @@ export function LandingPage({ product, region }) {
           View product
         </Link>
         <div className="lp-micro-trust lp-final-trust">
-          <span>Sensitive skin tested</span>
-          <span>Absorbs in seconds</span>
-          <span>Dermatologist recommended</span>
+          <span>Sensitive needs tested</span>
+          <span>Comfort-Care Formula</span>
+          <span>For frequent daily use</span>
         </div>
       </section>
     </main>
